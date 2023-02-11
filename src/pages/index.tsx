@@ -31,7 +31,7 @@ export default function Home() {
 
          <IntroAnimation />
 
-         <section className={`${stylesCanvasContainer} ${!canvasCanAppear && 'hidden'}`}>
+         <section className={`${stylesCanvasContainer} ${canvasCanAppear ? '' : 'hidden'}`}>
             <Canvas camera={{
                position: [0, 0, 300]
             }}>
