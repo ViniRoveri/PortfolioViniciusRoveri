@@ -1,6 +1,6 @@
 ![Homepage screenshot](./portfolio-screenshot.png)
 
-# **Portfolio Vinícius Roveri** ([Go To The Project](https://viniciusroveri.vercel.app/))
+# **Portfolio Vinícius Roveri** ([Go To The Site](https://viniciusroveri.vercel.app/))
 
 <br/>
 
@@ -11,6 +11,8 @@ Project where I showcase all my abilities in Web Development, UX design, Motion 
 ### **Index:**
 
 - #### [Creative Process](#creative-process-1)
+
+- #### [Updating to NextJS](#updating-to-nextjs-1)
 
 - #### [3D Models](#3d-models-1)
    - #### [Putting meshes into the code](#putting-meshes-into-the-code-1)
@@ -45,6 +47,12 @@ The idea of bringing together all my skills in different areas of creativity and
 As creativity is basically using your experience on top of something that exists to create something new, I went searching for inspiration in other professional web developers' portfolios and used that to make something I thought would make sense to both showcase my personality and my technical skills. <br/>
 The two main inspirations were [**iuri.is**](https://iuri.is/) for the clean design and awesome display of information allied with the use of animations, and mainly [**itsSharlee**](https://itssharl.ee/) for the insane use of 3D, animation and design to reinforce his also awesome branding work, to create what is probably my favorite portfolio ever. <br/>
 With that references I went to work and united all my knowledge with a goal of displaying my work in a clean, interactive and concise way, to best show anyone who comes to my portfolio not only what Vinícius does, but also who Vinícius is.
+
+<br/>
+
+- ### **Updating to NextJS**
+
+After learning the `NextJS` framework the need of it in the project for me was made very clear, so after the Portfolio was already finished with React I updated it just by creating a Next app, copying the files of the original project into it and making some slight necessary adjustments. The main reason I did that was the built-in `Static Site Generation` by `NextJS`, which helped with the loading inconsistency the starting animations were facing across multiple devices, now with the static site I can almost guarantee each animation will play at the right time, as all the assets are already previously created on the `build` process and the client browser will not have to do so when opening the site.
 
 <br/>
 
