@@ -1,15 +1,14 @@
 export const animationsDurations = {
-   pageLoad: 2000,
-   intro: 5.5,
+   pageLoad: 1,
+   intro: 4.5,
    sphereAndPath: 3,
    letters: 4,
 }
 
 export const animationsDelays = {
-   canvasAppear: animationsDurations.pageLoad + 
-   animationsDurations.intro * 1000 - 3600,
-   sphereAndPath: 1,
-   letters: 1 + animationsDurations.sphereAndPath / 4
+   canvasAppear: animationsDurations.pageLoad + animationsDurations.intro - 1.2,
+   sphereAndPath: 2,
+   letters: 2 + animationsDurations.sphereAndPath / 4
 }
 
 export const projectsLinks:{[key: string]: string} = {
@@ -50,7 +49,7 @@ export const titlesAndDescriptions:{[key: string]: [string, string[]]} = {
    experience: [`Experience`, [
       `Let's explore what I'm actually capable of doing!`,
 
-      `The tools I use on my projects include HTML, CSS, JavaScript, React, Typescript, Tailwind, SASS and Jest for the Front End; REST APIs, NodeJS, Express, MongoDB and NoSQL for the Back-End; and Git for code versioning.`]],
+      `The tools I use on my projects include NextJS, React, Typescript, JavaScript, Tailwind, SASS, CSS, HTML and Jest for the Front End; REST APIs, NodeJS, Express, MongoDB and NoSQL for the Back-End; and Git for code versioning.`]],
    project1: [`What Should I Listen`, [
       `I developed a website with React, Typescript and SASS/SCSS to generate personalized music recommendations for the users. These recommendations can be based on their taste in artist, genre or vibe. The users can also use the random recommendation button, in addition to a Favorites tab to save the songs they may want. When clicking on a song, all information about it is shown, in addition to the music video to be heard right away. The songs are stored in a NoSQL REST API that I created using NodeJS, Express and MongoDB. This API is controlled locally via an interface I also developed specifically for it.`
    ]],

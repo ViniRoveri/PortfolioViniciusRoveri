@@ -50,9 +50,10 @@ export default function SphereAndPath(props: JSX.IntrinsicElements['group']){
 				y: groupStartYPosition
 			})
 
+         const setIntroIsDoneDelay = animationsDelays.sphereAndPath + animationsDurations.sphereAndPath
          setTimeout(()=>{
             setIntroIsDone(true)
-         }, animationsDurations.sphereAndPath * 1000)
+         }, setIntroIsDoneDelay * 1000)
 		}
    },[])
 
