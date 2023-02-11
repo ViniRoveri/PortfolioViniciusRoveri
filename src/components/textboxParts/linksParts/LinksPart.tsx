@@ -8,7 +8,7 @@ const ResumeIcon = '/assets/img/icons/ResumeIcon.svg'
 
 const LinkedinLink = 'https://www.linkedin.com/in/vinicius-roveri/?locale=en_US'
 const GithubLink = 'https://github.com/ViniRoveri'
-const ResumeLink = '/assets/CV-Vinicius-Roveri-Rocha.pdf'
+const ResumeLink = '/assets/CV Vinícius Roveri Rocha.pdf'
 const TiktokLink = 'https://www.tiktok.com/@vini_roveri'
 const CertificationLink = 'https://cursos.alura.com.br/user/viniciusroverirocha/fullCertificate/4eb89ec2f8c48388e52f569063df0445'
 

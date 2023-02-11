@@ -4,7 +4,7 @@
 
 <br/>
 
-Project where I showcase all my abilities in Web Development, UX design, Motion Graphics and 3D Modelling, all merged together in one single piece. Made using various professional and industry standard tools for the front-end development such as GSAP for JavaScript animations, React Three Fiber which is an extension of the ThreeJS library, Bodymovin for making After Effects animations web-ready, and a whole more that when combined with the standard React, Typescript & Tailwind, create the art you see on the screen.
+Project where I showcase all my abilities in Web Development, UX design, Motion Graphics and 3D Modelling, all merged together in one single piece. Made using various professional and industry standard tools for the front-end development such as the NextJS framework, GSAP for JavaScript animations, React Three Fiber which is an extension of the ThreeJS library, Bodymovin & Lottie-Web for making After Effects animations web-ready, and a whole more that when combined with the standard NextJS, React, Typescript & Tailwind, create the art you see on the screen.
 
 <br/>
 
