@@ -57,7 +57,7 @@ export const titlesAndDescriptions:{[key: string]: [string, string[]]} = {
       `I developed a timer for Rubik's Cube practice using React with TypeScript. The website has a scramble generator, a timer and a storage of times and averages, where the user can access all the information of each stored time. In addition, the site simulates official competition rules, such as a 15-second inspection, and the adding of penalties if necessary.`
    ]],
    project3: [`The Games I Went`, [
-      `I used React, TypeScript and the React Router to create a website where information, data and statistics are archived about all the football matches I have ever attended in my life. The games are on a NoSQL REST API that was built with NodeJS, Express and MongoDB and controlled locally.`
+      `I used React, TypeScript and some React libraries to create a website where information, data and statistics are archived about all the football matches I have ever attended in my life. The games are on a NoSQL REST API that was built with NodeJS, Express and MongoDB and controlled locally.`
    ]],
    education: [`Education`, [
       `- I have over 500 hours of courses completed at Alura, one of the biggest tech online schools in Brazil. This knowledge covers all the necessary technologies in Front-End development, and everything that can be deepened within each.`,

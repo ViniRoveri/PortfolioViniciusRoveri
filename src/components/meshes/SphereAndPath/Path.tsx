@@ -101,7 +101,7 @@ export default function Path(props: JSX.IntrinsicElements['group']) {
         </mesh>
         
         <mesh geometry={nodes['4-Headphone'].geometry}>
-          <meshStandardMaterial color='#5D3FD3' {...iconsStandardMaterialsConfig} />
+          <meshStandardMaterial color='#704cff' {...iconsStandardMaterialsConfig} />
         </mesh>
         
         <mesh geometry={nodes['4-HeadphonesEars'].geometry}>
