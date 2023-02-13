@@ -75,64 +75,64 @@ export default function Path(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/assets/3d/Path.gltf') as unknown as GLTFResult
   return (
     <group {...props} dispose={null} ref={group}>
-      <mesh geometry={nodes.United_Path.geometry} rotation={[-1.2, 0.68, -0.55]} scale={[0.06, 0.16, 0.2]} >
+      <mesh geometry={nodes.United_Path.geometry}>
         <meshStandardMaterial color='#ffe7cc' roughness={0.1} />
       </mesh>
 
       <Float floatingRange={[0, 2]} floatIntensity={1.5} rotationIntensity={0.1} speed={2}>
-        <mesh geometry={nodes['1-Letters'].geometry} scale={[10, 10, 2]} >
+        <mesh geometry={nodes['1-Letters'].geometry}>
           <meshStandardMaterial color='#ccc' {...iconsStandardMaterialsConfig} />
         </mesh>
-
-        <mesh geometry={nodes['2-Profile'].geometry} rotation={[0.7, 0, -0.52]} scale={[6, 10, 4]} >
+        
+        <mesh geometry={nodes['2-Profile'].geometry}>
           <meshStandardMaterial color='#b2fcff' {...iconsStandardMaterialsConfig} />
         </mesh>
-
-        <mesh geometry={nodes['3-Computer'].geometry} rotation={[1.4, 0, 0]} scale={[16, 9.6, 1.6]} >
+        
+        <mesh geometry={nodes['3-Computer'].geometry}>
           <meshStandardMaterial color='#0d0d0d' {...iconsStandardMaterialsConfig} />
         </mesh>
-
-        <mesh geometry={nodes['3-ComputerScreen'].geometry} rotation={[1.4, 0, 0]} scale={[16, 9.6, 1.6]} >
+        
+        <mesh geometry={nodes['3-ComputerScreen'].geometry}>
           <meshStandardMaterial color='#808080' {...iconsStandardMaterialsConfig} />
         </mesh>
-
-        <mesh geometry={nodes['3-ComputerScreenLetters'].geometry} rotation={[1.4, 0, 0]} scale={[1.68, 4.2, 1.68]} >
+        
+        <mesh geometry={nodes['3-ComputerScreenLetters'].geometry}>
           <meshStandardMaterial color='#e5e5e5' {...iconsStandardMaterialsConfig} />
         </mesh>
-
-        <mesh geometry={nodes['4-Headphone'].geometry} rotation={[2.08, 0.01, -1.11]} scale={[7, 1.4, 7]} >
+        
+        <mesh geometry={nodes['4-Headphone'].geometry}>
           <meshStandardMaterial color='#5D3FD3' {...iconsStandardMaterialsConfig} />
         </mesh>
-
-        <mesh geometry={nodes['4-HeadphonesEars'].geometry} rotation={[2.08, 0.01, -1.11]} scale={[7, 1.4, 7]} >
+        
+        <mesh geometry={nodes['4-HeadphonesEars'].geometry}>
           <meshStandardMaterial color='#222126' {...iconsStandardMaterialsConfig} />
         </mesh>
-
-        <mesh geometry={nodes['5-SoccerBallBlack'].geometry} rotation={[1.51, 0.82, 2.8]} scale={11.01} position={[0, -0.2, 0]}>
+        
+        <mesh geometry={nodes['5-SoccerBallBlack'].geometry}>
           <meshStandardMaterial color='#1a1a1a' {...iconsStandardMaterialsConfig} />
         </mesh>
-
-        <mesh geometry={nodes['5-SoccerBallWhite'].geometry} rotation={[1.51, 0.82, 2.8]} scale={10.84} >
+        
+        <mesh geometry={nodes['5-SoccerBallWhite'].geometry}>
           <meshStandardMaterial color='#e5e5e5' {...iconsStandardMaterialsConfig} />
         </mesh>
-
-        <mesh geometry={nodes['6-Hourglass'].geometry} rotation={[-2.71, 0, 0.47]} scale={10} >
+        
+        <mesh geometry={nodes['6-Hourglass'].geometry}>
           <meshStandardMaterial color='#ccb499' {...iconsStandardMaterialsConfig} />
         </mesh>
-
-        <mesh geometry={nodes['6-HourglassBase'].geometry} rotation={[-2.71, 0, 0.47]} scale={10} >
+        
+        <mesh geometry={nodes['6-HourglassBase'].geometry}>
           <meshStandardMaterial color='#806240' {...iconsStandardMaterialsConfig} />
         </mesh>
-
-        <mesh geometry={nodes['7-GraduationHat'].geometry} rotation={[-2.09, -0.3, 0]} scale={[10, 4, 10]} >
+        
+        <mesh geometry={nodes['7-GraduationHat'].geometry}>
           <meshStandardMaterial color='#002780' {...iconsStandardMaterialsConfig} />
         </mesh>
-
-        <mesh geometry={nodes['7-GraduationHatThing'].geometry} rotation={[-2.09, 0.32, 0]} scale={[0.8, 10, 0.8]} >
+        
+        <mesh geometry={nodes['7-GraduationHatThing'].geometry}>
           <meshStandardMaterial color='#805d00' {...iconsStandardMaterialsConfig} />
         </mesh>
-
-        <mesh geometry={nodes['8-Link'].geometry} rotation={[-0.27, -1.35, -0.6]} scale={5} >
+        
+        <mesh geometry={nodes['8-Link'].geometry}>
           <meshStandardMaterial color='#cc0000' {...iconsStandardMaterialsConfig} />
         </mesh>
       </Float>

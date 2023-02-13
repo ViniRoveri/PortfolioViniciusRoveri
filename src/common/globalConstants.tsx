@@ -13,8 +13,8 @@ export const animationsDelays = {
 
 export const projectsLinks:{[key: string]: string} = {
    project1: 'https://whatshouldilisten.vercel.app/',
-   project2: 'https://thegamesiwent.vercel.app/',
-   project3: 'https://vrtimer.vercel.app/'
+   project2: 'https://vrtimer.vercel.app/',
+   project3: 'https://thegamesiwent.vercel.app/'
 }
 
 export const sectionsScrollOffsets:{[key: string]: number} = {
@@ -53,11 +53,11 @@ export const titlesAndDescriptions:{[key: string]: [string, string[]]} = {
    project1: [`What Should I Listen`, [
       `I developed a website with React, Typescript and SASS/SCSS to generate personalized music recommendations for the users. These recommendations can be based on their taste in artist, genre or vibe. The users can also use the random recommendation button, in addition to a Favorites tab to save the songs they may want. When clicking on a song, all information about it is shown, in addition to the music video to be heard right away. The songs are stored in a NoSQL REST API that I created using NodeJS, Express and MongoDB. This API is controlled locally via an interface I also developed specifically for it.`
    ]],
-   project2: [`The Games I Went`, [
-      `I used React, TypeScript and the React Router to create a website where information, data and statistics are archived about all the football matches I have ever attended in my life. The games are on a NoSQL REST API that was built with NodeJS, Express and MongoDB and controlled locally.`
-   ]],
-   project3: [`VR Timer`, [
+   project2: [`VR Timer`, [
       `I developed a timer for Rubik's Cube practice using React with TypeScript. The website has a scramble generator, a timer and a storage of times and averages, where the user can access all the information of each stored time. In addition, the site simulates official competition rules, such as a 15-second inspection, and the adding of penalties if necessary.`
+   ]],
+   project3: [`The Games I Went`, [
+      `I used React, TypeScript and the React Router to create a website where information, data and statistics are archived about all the football matches I have ever attended in my life. The games are on a NoSQL REST API that was built with NodeJS, Express and MongoDB and controlled locally.`
    ]],
    education: [`Education`, [
       `- I have over 500 hours of courses completed at Alura, one of the biggest tech online schools in Brazil. This knowledge covers all the necessary technologies in Front-End development, and everything that can be deepened within each.`,

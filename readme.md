@@ -26,6 +26,7 @@ Project where I showcase all my abilities in Web Development, UX design, Motion 
    - #### [Bringing Motion Graphics to the code](#bringing-motion-graphics-to-the-code-1)
 
 - #### [Performance Improvements](#performance-improvements-1)
+   - #### [Making 3D Models Lighter](#making-3d-models-lighter-1)
    - #### [Intro animation not loading on start](#intro-animation-not-loading-on-start-1)
    - #### [3D meshes not appearing at the right time](#3d-meshes-not-appearing-at-the-right-time-1)
    - #### [Globe lagging when animating position and rotation](#globe-lagging-when-animating-position-and-rotation-1)
@@ -102,6 +103,10 @@ This one have a special place in my heart, as before getting into Web Developmen
 
 As the project uses very heavy assets like all 3D models and animations, the performance issues were being a huge deal before all optimizations. Each one demanded its own solution and I'm gonna explain them here:
 
+   - ### Making 3D Models Lighter
+
+      By far the best improvement I could ever make was to reduce the file size of the 3D models, as they make up for almost the whole site. I did that in Blender by removing unnecessary edges (not worrying about topology as it's not necessary in this context) and exporting the models as low-poly as possible. This change alone reduced the sum of the size of the 3d files from 63mb to less than 4mb, a great 94% decrease. 
+   
    - ### Intro animation not loading on start
 
       This was a deal I had to break into to parts: Making the animation less heavy, and giving time for the browser to load it on start. The first part was back in After Effects, I did a lot of obvious optimizations (that for some reason I haven't done before) like removing some elements, hiding layers when they had no more content, using simpler shapes and avoid using unnecessary masks and scripts. And the second part I solved by manually creating a loading screen when the site is initialized, and giving it a predetermined delay before creating the svg of the animation. This delay is set manually, the other option was actually waiting for the animation to load before playing somehow, but as it's not that heavy of a process I decided to go with the first and easier solution.

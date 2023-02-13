@@ -11,14 +11,14 @@ import gsap, {Elastic} from 'gsap'
 import { animationsDelays, animationsDurations } from '../../common/globalConstants'
 
 type GLTFResult = GLTF & {
-	nodes: {
-		United_Letters: THREE.Mesh
-	}
-	materials: {}
+  nodes: {
+    United_Letters: THREE.Mesh
+  }
+  materials: {}
 }
 
 export default function Letters(props: JSX.IntrinsicElements['group']) {
-	const letters = useRef<THREE.Mesh>(null)
+  const letters = useRef<THREE.Mesh>(null)
 	const initialYPosition = 8
 
 	useEffect(() => {
@@ -34,16 +34,14 @@ export default function Letters(props: JSX.IntrinsicElements['group']) {
 		}
 	}, [])
 
-	
-
-	const { nodes, materials } = useGLTF('/assets/3d/Letters.gltf') as unknown as GLTFResult
-	return (
-		<group {...props} dispose={null}>
-			<mesh geometry={nodes.United_Letters.geometry} position={[0.06, initialYPosition, 0]} scale={[1, 1, 0.2]} ref={letters}>
-				<meshStandardMaterial color='#ff9316' roughness={0.4}/>
-			</mesh>
-		</group>
-	)
+  const { nodes, materials } = useGLTF('/assets/3d/Letters.gltf') as unknown as GLTFResult
+  return (
+    <group {...props} dispose={null}>
+      <mesh geometry={nodes.United_Letters.geometry} ref={letters}>
+        <meshStandardMaterial color='#ff9316' roughness={0.4}/>
+      </mesh>
+    </group>
+  )
 }
 
 useGLTF.preload('/assets/3d/Letters.gltf')

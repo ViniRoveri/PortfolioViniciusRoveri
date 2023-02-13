@@ -18,7 +18,7 @@ export default function Sphere(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/assets/3d/Sphere.gltf') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Sphere001.geometry} material={nodes.Sphere001.material}>
+      <mesh geometry={nodes.Sphere001.geometry}>
         <meshStandardMaterial color='#ff9316' metalness={1}/>
       </mesh>
     </group>
