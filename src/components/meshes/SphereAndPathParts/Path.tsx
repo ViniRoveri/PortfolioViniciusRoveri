@@ -8,7 +8,7 @@ import { Float, useGLTF, useScroll } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { sectionsScrollOffsets, sphereRotations } from '../../../common/globalConstants'
+import { sectionsScrollOffsets, sphereRotations } from '@/common/globalConstants'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -18,17 +18,17 @@ type GLTFResult = GLTF & {
     ['3-Computer']: THREE.Mesh
     ['3-ComputerScreen']: THREE.Mesh
     ['3-ComputerScreenLetters']: THREE.Mesh
-    ['4-Headphone']: THREE.Mesh
-    ['4-HeadphonesEars']: THREE.Mesh
-    ['5-SoccerBallBlack']: THREE.Mesh
-    ['5-SoccerBallWhite']: THREE.Mesh
+    ['4-CalendarBody']: THREE.Mesh
+    ['4-CalendarHead']: THREE.Mesh
+    ['4-CalendarNodes']: THREE.Mesh
+    ['5-Headphone']: THREE.Mesh
+    ['5-HeadphonesEars']: THREE.Mesh
     ['6-Hourglass']: THREE.Mesh
     ['6-HourglassBase']: THREE.Mesh
     ['7-GraduationHat']: THREE.Mesh
     ['7-GraduationHatThing']: THREE.Mesh
     ['8-Link']: THREE.Mesh
   }
-  materials: {}
 }
 
 const iconsStandardMaterialsConfig = {
@@ -36,7 +36,7 @@ const iconsStandardMaterialsConfig = {
   roughness: 0.5
 }
 
-export default function Path(props: JSX.IntrinsicElements['group']) {
+export default function Path(props:JSX.IntrinsicElements['group']){
   const scroll = useScroll()
 
   const group = useRef<THREE.Group>(null)
@@ -72,66 +72,70 @@ export default function Path(props: JSX.IntrinsicElements['group']) {
     })
   })
 
-  const { nodes, materials } = useGLTF('/assets/3d/Path.gltf') as unknown as GLTFResult
+  const { nodes } = useGLTF('/assets/3d/Path.gltf') as unknown as GLTFResult
   return (
     <group {...props} dispose={null} ref={group}>
       <mesh geometry={nodes.United_Path.geometry}>
         <meshStandardMaterial color='#ffe7cc' roughness={0.1} />
       </mesh>
 
-      <Float floatingRange={[0, 2]} floatIntensity={1.5} rotationIntensity={0.1} speed={2}>
+      <Float floatIntensity={1.5} floatingRange={[0, 2]} rotationIntensity={0.1} speed={2}>
         <mesh geometry={nodes['1-Letters'].geometry}>
           <meshStandardMaterial color='#ccc' {...iconsStandardMaterialsConfig} />
         </mesh>
-        
+
         <mesh geometry={nodes['2-Profile'].geometry}>
           <meshStandardMaterial color='#b2fcff' {...iconsStandardMaterialsConfig} />
         </mesh>
-        
+
         <mesh geometry={nodes['3-Computer'].geometry}>
           <meshStandardMaterial color='#0d0d0d' {...iconsStandardMaterialsConfig} />
         </mesh>
-        
+
         <mesh geometry={nodes['3-ComputerScreen'].geometry}>
           <meshStandardMaterial color='#808080' {...iconsStandardMaterialsConfig} />
         </mesh>
-        
+
         <mesh geometry={nodes['3-ComputerScreenLetters'].geometry}>
           <meshStandardMaterial color='#e5e5e5' {...iconsStandardMaterialsConfig} />
         </mesh>
-        
-        <mesh geometry={nodes['4-Headphone'].geometry}>
+
+        <mesh geometry={nodes['4-CalendarBody'].geometry}>
+          <meshStandardMaterial color='#ccd6dd' {...iconsStandardMaterialsConfig} />
+        </mesh>
+
+        <mesh geometry={nodes['4-CalendarHead'].geometry}>
+          <meshStandardMaterial color='#dd2e44' {...iconsStandardMaterialsConfig} />
+        </mesh>
+
+        <mesh geometry={nodes['4-CalendarNodes'].geometry}>
+          <meshStandardMaterial color='#fff' {...iconsStandardMaterialsConfig} />
+        </mesh>
+
+        <mesh geometry={nodes['5-Headphone'].geometry}>
           <meshStandardMaterial color='#704cff' {...iconsStandardMaterialsConfig} />
         </mesh>
-        
-        <mesh geometry={nodes['4-HeadphonesEars'].geometry}>
+
+        <mesh geometry={nodes['5-HeadphonesEars'].geometry}>
           <meshStandardMaterial color='#222126' {...iconsStandardMaterialsConfig} />
         </mesh>
-        
-        <mesh geometry={nodes['5-SoccerBallBlack'].geometry}>
-          <meshStandardMaterial color='#1a1a1a' {...iconsStandardMaterialsConfig} />
-        </mesh>
-        
-        <mesh geometry={nodes['5-SoccerBallWhite'].geometry}>
-          <meshStandardMaterial color='#e5e5e5' {...iconsStandardMaterialsConfig} />
-        </mesh>
-        
+
         <mesh geometry={nodes['6-Hourglass'].geometry}>
           <meshStandardMaterial color='#ccb499' {...iconsStandardMaterialsConfig} />
         </mesh>
-        
+
         <mesh geometry={nodes['6-HourglassBase'].geometry}>
           <meshStandardMaterial color='#806240' {...iconsStandardMaterialsConfig} />
         </mesh>
-        
+
         <mesh geometry={nodes['7-GraduationHat'].geometry}>
           <meshStandardMaterial color='#002780' {...iconsStandardMaterialsConfig} />
         </mesh>
-        
+
         <mesh geometry={nodes['7-GraduationHatThing'].geometry}>
           <meshStandardMaterial color='#805d00' {...iconsStandardMaterialsConfig} />
         </mesh>
-        
+
         <mesh geometry={nodes['8-Link'].geometry}>
           <meshStandardMaterial color='#cc0000' {...iconsStandardMaterialsConfig} />
         </mesh>

@@ -4,7 +4,7 @@ import { useActiveSection } from "../common/hooks"
 import AnimatedTextbox from "./AnimatedTextbox"
 import LanguagesPart from "./textboxParts/LanguagesPart"
 import LinksPart from "./textboxParts/linksParts/LinksPart"
-import ProjectLinkPart from "./textboxParts/ProjectLinkPart"
+import ProjectLinks from "./textboxParts/ProjectLinks"
 
 const stylesStandardParagraph = `mb-2
 sm:mb-2.5
@@ -31,7 +31,7 @@ function TextboxSelector(){
 
             if(activeSection === 'project1' || activeSection === 'project2' || activeSection === 'project3'){
                setAdditionalPart(
-                  <ProjectLinkPart/>
+                  <ProjectLinks/>
                )
             }else if(activeSection === 'education'){
                setAdditionalPart(

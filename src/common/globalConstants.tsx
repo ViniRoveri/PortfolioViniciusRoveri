@@ -12,9 +12,15 @@ export const animationsDelays = {
 }
 
 export const projectsLinks:{[key: string]: string} = {
-   project1: 'https://whatshouldilisten.vercel.app/',
-   project2: 'https://vrtimer.vercel.app/',
-   project3: 'https://thegamesiwent.vercel.app/'
+   project1: 'https://vrplanner.vercel.app/',
+   project2: 'https://whatshouldilisten.vercel.app/',
+   project3: 'https://vrtimer.vercel.app/'
+}
+
+export const reposLinks:{[key: string]: string} = {
+   project1: 'https://github.com/ViniRoveri/VRPlanner',
+   project2: 'https://github.com/ViniRoveri/WhatShouldIListen',
+   project3: 'https://github.com/ViniRoveri/VRTimer'
 }
 
 export const sectionsScrollOffsets:{[key: string]: number} = {
@@ -49,18 +55,18 @@ export const titlesAndDescriptions:{[key: string]: [string, string[]]} = {
    experience: [`Experience`, [
       `Let's explore what I'm actually capable of doing!`,
 
-      `The tools I use on my projects include NextJS, React, Typescript, JavaScript, Tailwind, SASS, CSS, HTML and Jest for the Front End; REST APIs, NodeJS, Express, MongoDB and NoSQL for the Back-End; and Git for code versioning.`]],
-   project1: [`What Should I Listen`, [
-      `I developed a website with React, Typescript and SASS/SCSS to generate personalized music recommendations for the users. These recommendations can be based on their taste in artist, genre or vibe. The users can also use the random recommendation button, in addition to a Favorites tab to save the songs they may want. When clicking on a song, all information about it is shown, in addition to the music video to be heard right away. The songs are stored in a NoSQL REST API that I created using NodeJS, Express and MongoDB. This API is controlled locally via an interface I also developed specifically for it.`
+      `The tools I use on my projects include NextJS, React, Typescript, JavaScript, Tailwind, SASS, CSS, HTML and Jest for the Front End; REST APIs, NodeJS, Express, MongoDB, JWT and NoSQL for the Back-End; and Git for code versioning.`]],
+   project1: [`VR Planner`, [
+      `I developed a fullstack web application of a whole planner with a clean and aesthetic UI that includes a calendar, your events list of any given period you choose, complete events management and other quality of life tools for your planning, all customizable by each user with a full authentication via JWT made in the backend also built by me. The front-end was made mainly with Next.js for React with Typescript, Tailwind CSS, and Framer-Motion for animations. For the back-end I used the JavaScript stack of Node.js with Express and MongoDB to control the project's NoSQL REST API.`
    ]],
-   project2: [`VR Timer`, [
+   project2: [`What Should I Listen`, [
+      `I developed a website with React, Typescript and SASS/SCSS to generate personalized music recommendations for the users. These recommendations can be based on their taste in artist, genre or vibe. The users can also use the random recommendation button, and a Favorites tab to save the songs they may want. By clicking on a song you can see all information about it, in addition to the music video to be heard right away. The songs are stored in a NoSQL REST API that I created using the MERN stack. This API is controlled locally via an interface I also developed specifically for it.`
+   ]],
+   project3: [`VR Timer`, [
       `I developed a timer for Rubik's Cube practice using React with TypeScript. The website has a scramble generator, a timer and a storage of times and averages, where the user can access all the information of each stored time. In addition, the site simulates official competition rules, such as a 15-second inspection, and the adding of penalties if necessary.`
    ]],
-   project3: [`The Games I Went`, [
-      `I used React, TypeScript and some React libraries to create a website where information, data and statistics are archived about all the football matches I have ever attended in my life. The games are on a NoSQL REST API that was built with NodeJS, Express and MongoDB and controlled locally.`
-   ]],
    education: [`Education`, [
-      `- I have over 500 hours of courses completed at Alura, one of the biggest tech online schools in Brazil. This knowledge covers all the necessary technologies in Front-End development, and everything that can be deepened within each.`,
+      `- I have over 700 hours of courses completed at Alura, one of the biggest tech online schools in Brazil. This knowledge covers all the necessary technologies in Front-End development, and everything that can be deepened within each.`,
 
       `- I graduated in Animation Design at Faculdade Melies, one of the most prestigious art colleges in South America. This graduation gave me all the foundation of the art, animation and modelling concepts I have today.`
    ]],

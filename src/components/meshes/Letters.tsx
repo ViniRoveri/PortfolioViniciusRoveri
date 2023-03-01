@@ -14,10 +14,9 @@ type GLTFResult = GLTF & {
   nodes: {
     United_Letters: THREE.Mesh
   }
-  materials: {}
 }
 
-export default function Letters(props: JSX.IntrinsicElements['group']) {
+export default function Letters(props:JSX.IntrinsicElements['group']){
   const letters = useRef<THREE.Mesh>(null)
 	const initialYPosition = 8
 
@@ -34,7 +33,7 @@ export default function Letters(props: JSX.IntrinsicElements['group']) {
 		}
 	}, [])
 
-  const { nodes, materials } = useGLTF('/assets/3d/Letters.gltf') as unknown as GLTFResult
+  const { nodes } = useGLTF('/assets/3d/Letters.gltf') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.United_Letters.geometry} ref={letters}>

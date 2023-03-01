@@ -11,11 +11,10 @@ type GLTFResult = GLTF & {
   nodes: {
     Sphere001: THREE.Mesh
   }
-  materials: {}
 }
 
-export default function Sphere(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/assets/3d/Sphere.gltf') as unknown as GLTFResult
+export default function Sphere(props:JSX.IntrinsicElements['group']) {
+  const { nodes } = useGLTF('/assets/3d/Sphere.gltf') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Sphere001.geometry}>

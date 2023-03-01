@@ -2,10 +2,10 @@ import { useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import gsap, { Power4 } from "gsap"
-import { animationsDelays, animationsDurations, sectionsScrollOffsets } from "../../../common/globalConstants";
-import Path from "./Path";
-import Sphere from "./Sphere";
-import { useActiveSection, useSetActiveSection } from "../../../common/hooks";
+import { animationsDelays, animationsDurations, sectionsScrollOffsets } from "@/common/globalConstants";
+import { useActiveSection, useSetActiveSection } from "@/common/hooks";
+import Sphere from "./SphereAndPathParts/Sphere";
+import Path from './SphereAndPathParts/Path'
 
 export default function SphereAndPath(props: JSX.IntrinsicElements['group']){
    const scroll = useScroll()

@@ -1,6 +1,6 @@
 import { Float, Scroll, ScrollControls } from "@react-three/drei"
 import Letters from "./meshes/Letters"
-import SphereAndPath from "./meshes/SphereAndPath/SphereAndPath"
+import SphereAndPath from "./meshes/SphereAndPath"
 
 export default function CanvasContent() {
    return (
