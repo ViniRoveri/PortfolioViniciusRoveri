@@ -6,15 +6,20 @@ import LanguagesPart from "./textboxParts/LanguagesPart"
 import LinksPart from "./textboxParts/linksParts/LinksPart"
 import ProjectLinks from "./textboxParts/ProjectLinks"
 
-const stylesStandardParagraph = `mb-2
-sm:mb-2.5
-md:mb-3`
+const stylesSubtitleContainer = `flex items-enter justify-end mb-1.5 w-full
+sm:mb-2
+md:mb-2.5
+lg:mb-3`
+const stylesSubtitle = `font-bold`
 
 function TextboxSelector(){
    const activeSection = useActiveSection()
 
-   const [textboxTitle,setTextboxTitle] = useState<string>('')
-   const [textboxDescription,setTextboxDescription] = useState<string[]>([''])
+   const [isExperiencePart, setIsExperiencePart] = useState(false)
+   const [textboxTitle,setTextboxTitle] = useState('')
+   const [textboxSubtitle,setTextboxSubtitle] = useState('')
+   const [textboxTime,setTextboxTime] = useState('')
+   const [textboxDescription,setTextboxDescription] = useState('')
    const [additionalPart,setAdditionalPart] = useState(<></>)
 
    const [changeText,setChangeText] = useState(false)
@@ -25,24 +30,43 @@ function TextboxSelector(){
             setTextboxTitle(
                titlesAndDescriptions[activeSection][0]
             )
-            setTextboxDescription(
-               titlesAndDescriptions[activeSection][1]
-            )
 
-            if(activeSection === 'project1' || activeSection === 'project2' || activeSection === 'project3'){
+            const checkExperiencePart = activeSection === 'experience1' || activeSection === 'experience2' || activeSection === 'experience3'
+
+            if(checkExperiencePart){
+               setIsExperiencePart(true)
+
+               setTextboxSubtitle(
+                  titlesAndDescriptions[activeSection][1]
+               )
+               setTextboxTime(
+                  titlesAndDescriptions[activeSection][2]
+               )
+               setTextboxDescription(
+                  titlesAndDescriptions[activeSection][3]
+               )
+               
                setAdditionalPart(
                   <ProjectLinks/>
                )
-            }else if(activeSection === 'education'){
-               setAdditionalPart(
-                  <LanguagesPart/>
-               )
-            }else if(activeSection === 'links'){
-               setAdditionalPart(
-                  <LinksPart/>
-               )
             }else{
-               setAdditionalPart(<></>)
+               setIsExperiencePart(false)
+
+               setTextboxDescription(
+                  titlesAndDescriptions[activeSection][1]
+               )
+
+               if(activeSection === 'education'){
+                  setAdditionalPart(
+                     <LanguagesPart/>
+                  )
+               }else if(activeSection === 'links'){
+                  setAdditionalPart(
+                     <LinksPart/>
+                  )
+               }else{
+                  setAdditionalPart(<></>)
+               }
             }
          }, 400)
       }
@@ -51,14 +75,20 @@ function TextboxSelector(){
    return(
       <AnimatedTextbox changeText={changeText} setChangeText={setChangeText} title={textboxTitle}>
          <>
-         {textboxDescription.map((string, index)=>{
-            const lastIndex = textboxDescription.length - 1
-            
-            return(
-            <p className={index < lastIndex ? stylesStandardParagraph : ''} key={index}>{string}
-            </p>
-            )
-         })}
+         {isExperiencePart &&
+            <div className={stylesSubtitleContainer}>
+               <p className={stylesSubtitle}>
+                  {textboxSubtitle}
+               </p>&nbsp;-&nbsp;<p>
+                  {textboxTime}
+               </p>
+            </div>
+         }
+
+         <p>         
+            {textboxDescription}
+         </p>
+ 
 
          {additionalPart}
          </>

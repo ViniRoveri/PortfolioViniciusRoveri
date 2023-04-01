@@ -8,10 +8,11 @@ type Props = {
 
 export default function RepoLinkPart({styles}: Props){
    const activeSection = useActiveSection()
+   const repoLink = reposLinks[activeSection]
    
    return(
-      <div className={styles.container}>
-         <a className={styles.link} href={reposLinks[activeSection]} target='_blank'>
+      <div className={`${styles.container} ${!repoLink ? 'hidden' : ''}`}>
+         <a className={styles.link} href={repoLink} target='_blank'>
             <p>Go to the repository</p>
 
             <ArrowUpRightIcon className={styles.icon}/>

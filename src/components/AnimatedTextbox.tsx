@@ -17,10 +17,10 @@ sm:px-3.5
 md:px-4
 lg:px-5`
 const defaultTitleStyles = `font-bold font-title overflow-hidden`
-const stylesTitle = `${defaultTitleStyles} mb-2.5 text-[27px] text-right
-sm:mb-3 sm:text-[36px]
-md:mb-3.5 md:text-[45px]
-lg:mb-4 lg:text-[54px]`
+const stylesTitle = `${defaultTitleStyles} mb-2 text-[27px] text-right
+sm:mb-2.5 sm:text-[36px]
+md:mb-3 md:text-[45px]
+lg:mb-3.5 lg:text-[54px]`
 const stylesTitleIntroduction = `${defaultTitleStyles} mb-3 text-[40px] text-center
 sm:mb-3.5 sm:text-[49px]
 md:mb-4 md:text-[58px]
