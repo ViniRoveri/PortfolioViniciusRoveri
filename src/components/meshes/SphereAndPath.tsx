@@ -18,7 +18,7 @@ export default function SphereAndPath(props: JSX.IntrinsicElements['group']){
 
    const offsetsKeys = Object.keys(sectionsScrollOffsets)
    const groupScale = 0.8
-   const groupStartYPosition = 450
+   const groupStartYPosition = 500
    const groupFinalYPosition = -450
    const groupFinalXRotation = 0.7
 

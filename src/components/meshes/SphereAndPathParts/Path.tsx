@@ -11,137 +11,132 @@ import { useFrame } from '@react-three/fiber'
 import { sectionsScrollOffsets, sphereRotations } from '@/common/globalConstants'
 
 type GLTFResult = GLTF & {
-  nodes: {
-    United_Path: THREE.Mesh
-    ['1-Letters']: THREE.Mesh
-    ['2-Profile']: THREE.Mesh
-    ['3-Computer']: THREE.Mesh
-    ['3-ComputerScreen']: THREE.Mesh
-    ['3-ComputerScreenLetters']: THREE.Mesh
-    ['4-CalendarBody']: THREE.Mesh
-    ['4-CalendarHead']: THREE.Mesh
-    ['4-CalendarNodes']: THREE.Mesh
-    ['5-Headphone']: THREE.Mesh
-    ['5-HeadphonesEars']: THREE.Mesh
-    ['6-Hourglass']: THREE.Mesh
-    ['6-HourglassBase']: THREE.Mesh
-    ['7-GraduationHat']: THREE.Mesh
-    ['7-GraduationHatThing']: THREE.Mesh
-    ['8-Link']: THREE.Mesh
-  }
+	nodes: {
+		United_Path: THREE.Mesh
+		['1-Letters']: THREE.Mesh
+		['2-Profile']: THREE.Mesh
+		['3-Computer']: THREE.Mesh
+		['3-ComputerScreen']: THREE.Mesh
+		['3-ComputerScreenLetters']: THREE.Mesh
+		['4-RumoLogo']: THREE.Mesh
+		['5-CalendarBody']: THREE.Mesh
+		['5-CalendarHead']: THREE.Mesh
+		['5-CalendarNodes']: THREE.Mesh
+		['6-Headphone']: THREE.Mesh
+		['6-HeadphonesEars']: THREE.Mesh
+		['7-GraduationHat']: THREE.Mesh
+		['7-GraduationHatThing']: THREE.Mesh
+		['8-Link']: THREE.Mesh
+	}
 }
 
 const iconsStandardMaterialsConfig = {
-  metalness: 1,
-  roughness: 0.5
+	metalness: 1,
+	roughness: 0.5
 }
 
-export default function Path(props:JSX.IntrinsicElements['group']){
-  const scroll = useScroll()
+export default function Path(props: JSX.IntrinsicElements['group']) {
+	const scroll = useScroll()
 
-  const group = useRef<THREE.Group>(null)
+	const group = useRef<THREE.Group>(null)
 
-  const offsetsKeys = Object.keys(sectionsScrollOffsets)
-  const rotationsKeys = Object.keys(sphereRotations)
+	const offsetsKeys = Object.keys(sectionsScrollOffsets)
+	const rotationsKeys = Object.keys(sphereRotations)
 
-  useFrame(()=>{
-    if (scroll.offset <= sectionsScrollOffsets.introduction && group.current) {
-      group.current.rotation.z = 0
-      return
-    }
-    
-    offsetsKeys.forEach((key, index) => {
-      const previousOffset = sectionsScrollOffsets[offsetsKeys[index - 1]]
-      const previousRotation = sphereRotations[rotationsKeys[index - 1]]
+	useFrame(() => {
+		if (scroll.offset <= sectionsScrollOffsets.introduction && group.current) {
+			group.current.rotation.z = 0
+			return
+		}
 
-      if (index > 0 && scroll.offset <= sectionsScrollOffsets[key] && scroll.offset > previousOffset && group.current) {
-        let offsetDifference = previousOffset - sectionsScrollOffsets[key]
-        let rotationDifference = sphereRotations[key] - previousRotation
+		offsetsKeys.forEach((key, index) => {
+			const previousOffset = sectionsScrollOffsets[offsetsKeys[index - 1]]
+			const previousRotation = sphereRotations[rotationsKeys[index - 1]]
 
-        if (offsetDifference < 0) {
-          offsetDifference *= -1
-        }
+			if (index > 0 && scroll.offset <= sectionsScrollOffsets[key] && scroll.offset > previousOffset && group.current) {
+				let offsetDifference = previousOffset - sectionsScrollOffsets[key]
+				let rotationDifference = sphereRotations[key] - previousRotation
 
-        const newPathZRotation =
-        previousRotation
-        + rotationDifference
-        * scroll.range(previousOffset, offsetDifference)
+				if (offsetDifference < 0) {
+					offsetDifference *= -1
+				}
 
-        group.current.rotation.z = newPathZRotation
-      }
-    })
-  })
+				const newPathZRotation =
+					previousRotation
+					+ rotationDifference
+					* scroll.range(previousOffset, offsetDifference)
 
-  const { nodes } = useGLTF('/assets/3d/Path.gltf') as unknown as GLTFResult
-  return (
-    <group {...props} dispose={null} ref={group}>
-      <mesh geometry={nodes.United_Path.geometry}>
-        <meshStandardMaterial color='#ffe7cc' roughness={0.1} />
-      </mesh>
+				group.current.rotation.z = newPathZRotation
+			}
+		})
+	})
 
-      <Float floatIntensity={1.5} floatingRange={[0, 2]} rotationIntensity={0.1} speed={2}>
-        <mesh geometry={nodes['1-Letters'].geometry}>
-          <meshStandardMaterial color='#ccc' {...iconsStandardMaterialsConfig} />
-        </mesh>
+	const { nodes } = useGLTF('/assets/3d/Path.gltf') as unknown as GLTFResult
+	return (
+		<group {...props} dispose={null} ref={group}>
+			<mesh geometry={nodes.United_Path.geometry}>
+				<meshStandardMaterial color='#ffe7cc' roughness={0.1} />
+			</mesh>
 
-        <mesh geometry={nodes['2-Profile'].geometry}>
-          <meshStandardMaterial color='#b2fcff' {...iconsStandardMaterialsConfig} />
-        </mesh>
+			<Float floatIntensity={1.5} floatingRange={[0, 2]} rotationIntensity={0.1} speed={2}>
+				<mesh geometry={nodes['1-Letters'].geometry}>
+					<meshStandardMaterial color='#ccc' {...iconsStandardMaterialsConfig} />
+				</mesh>
 
-        <mesh geometry={nodes['3-Computer'].geometry}>
-          <meshStandardMaterial color='#0d0d0d' {...iconsStandardMaterialsConfig} />
-        </mesh>
+				<mesh geometry={nodes['2-Profile'].geometry}>
+					<meshStandardMaterial color='#b2fcff' {...iconsStandardMaterialsConfig} />
+				</mesh>
 
-        <mesh geometry={nodes['3-ComputerScreen'].geometry}>
-          <meshStandardMaterial color='#808080' {...iconsStandardMaterialsConfig} />
-        </mesh>
+				<mesh geometry={nodes['3-Computer'].geometry}>
+					<meshStandardMaterial color='#0d0d0d' {...iconsStandardMaterialsConfig} />
+				</mesh>
 
-        <mesh geometry={nodes['3-ComputerScreenLetters'].geometry}>
-          <meshStandardMaterial color='#e5e5e5' {...iconsStandardMaterialsConfig} />
-        </mesh>
+				<mesh geometry={nodes['3-ComputerScreen'].geometry}>
+					<meshStandardMaterial color='#808080' {...iconsStandardMaterialsConfig} />
+				</mesh>
 
-        <mesh geometry={nodes['4-CalendarBody'].geometry}>
-          <meshStandardMaterial color='#ccd6dd' {...iconsStandardMaterialsConfig} />
-        </mesh>
+				<mesh geometry={nodes['3-ComputerScreenLetters'].geometry}>
+					<meshStandardMaterial color='#e5e5e5' {...iconsStandardMaterialsConfig} />
+				</mesh>
 
-        <mesh geometry={nodes['4-CalendarHead'].geometry}>
-          <meshStandardMaterial color='#dd2e44' {...iconsStandardMaterialsConfig} />
-        </mesh>
+				<mesh geometry={nodes['4-RumoLogo'].geometry}>
+					<meshStandardMaterial color='#0fe8f9' {...iconsStandardMaterialsConfig} />
+				</mesh>
 
-        <mesh geometry={nodes['4-CalendarNodes'].geometry}>
-          <meshStandardMaterial color='#fff' {...iconsStandardMaterialsConfig} />
-        </mesh>
+				<mesh geometry={nodes['5-CalendarBody'].geometry}>
+					<meshStandardMaterial color='#ccd6dd' {...iconsStandardMaterialsConfig} />
+				</mesh>
 
-        <mesh geometry={nodes['5-Headphone'].geometry}>
-          <meshStandardMaterial color='#704cff' {...iconsStandardMaterialsConfig} />
-        </mesh>
+				<mesh geometry={nodes['5-CalendarHead'].geometry}>
+					<meshStandardMaterial color='#dd2e44' {...iconsStandardMaterialsConfig} />
+				</mesh>
 
-        <mesh geometry={nodes['5-HeadphonesEars'].geometry}>
-          <meshStandardMaterial color='#222126' {...iconsStandardMaterialsConfig} />
-        </mesh>
+				<mesh geometry={nodes['5-CalendarNodes'].geometry}>
+					<meshStandardMaterial color='#fff' {...iconsStandardMaterialsConfig} />
+				</mesh>
 
-        <mesh geometry={nodes['6-Hourglass'].geometry}>
-          <meshStandardMaterial color='#ccb499' {...iconsStandardMaterialsConfig} />
-        </mesh>
+				<mesh geometry={nodes['6-Headphone'].geometry}>
+					<meshStandardMaterial color='#704cff' {...iconsStandardMaterialsConfig} />
+				</mesh>
 
-        <mesh geometry={nodes['6-HourglassBase'].geometry}>
-          <meshStandardMaterial color='#806240' {...iconsStandardMaterialsConfig} />
-        </mesh>
+				<mesh geometry={nodes['6-HeadphonesEars'].geometry}>
+					<meshStandardMaterial color='#222126' {...iconsStandardMaterialsConfig} />
+				</mesh>
 
-        <mesh geometry={nodes['7-GraduationHat'].geometry}>
-          <meshStandardMaterial color='#002780' {...iconsStandardMaterialsConfig} />
-        </mesh>
+				<mesh geometry={nodes['7-GraduationHat'].geometry}>
+					<meshStandardMaterial color='#002780' {...iconsStandardMaterialsConfig} />
+				</mesh>
 
-        <mesh geometry={nodes['7-GraduationHatThing'].geometry}>
-          <meshStandardMaterial color='#805d00' {...iconsStandardMaterialsConfig} />
-        </mesh>
+				<mesh geometry={nodes['7-GraduationHatThing'].geometry}>
+					<meshStandardMaterial color='#805d00' {...iconsStandardMaterialsConfig} />
+				</mesh>
 
-        <mesh geometry={nodes['8-Link'].geometry}>
-          <meshStandardMaterial color='#cc0000' {...iconsStandardMaterialsConfig} />
-        </mesh>
-      </Float>
-    </group>
-  )
+				<mesh geometry={nodes['8-Link'].geometry}>
+					<meshStandardMaterial color='#cc0000' {...iconsStandardMaterialsConfig} />
+				</mesh>
+			</Float>
+		</group>
+	)
 }
 
 useGLTF.preload('/assets/3d/Path.gltf')
