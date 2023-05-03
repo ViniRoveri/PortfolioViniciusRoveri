@@ -55,7 +55,7 @@ export const titlesAndDescriptions:{[key: string]: string[]} = {
    experience: [`Experience`,
       `Let's explore what I'm actually capable of doing!
       
-      The tools I use on my work and projects include NextJS, React, Typescript, JavaScript, Tailwind, SASS, CSS, HTML and Jest for the Front End; REST APIs, NodeJS, Express, MongoDB, JWT and NoSQL for the Back-End; Git and GitHub for code versioning; The MVC project pattern for software architecture; and the SCRUM agile methodology for team productivity management.`
+      The tools I use on my work and projects include NextJS, React, Typescript, JavaScript, Tailwind, SASS, CSS, HTML and Jest for the Front End; REST APIs, NodeJS, Express, MongoDB, JWT, SQL and NoSQL for the Back-End; Git and GitHub for code versioning; The MVC project pattern for software architecture; and the SCRUM agile methodology for team productivity management.`
    ],
    experience1: [`Web Developer Intern`,
       `Rumo Soluções`,
@@ -73,7 +73,9 @@ export const titlesAndDescriptions:{[key: string]: string[]} = {
       `I developed a website with React, Typescript and SASS/SCSS to generate personalized music recommendations for the users. These recommendations can be based on their taste in artist, genre or vibe. The users can also use the random recommendation button, and a Favorites tab to save the songs they may want. By clicking on a song you can see all information about it, in addition to the music video to be heard right away. The songs are stored in a NoSQL REST API that I created using the MERN stack. This API is controlled locally via an interface I also developed specifically for it.`
    ],
    education: [`Education`,
-      `- I have over 700 hours of courses completed at Alura, one of the biggest tech online schools in Brazil. This knowledge covers all the necessary technologies in Front-End development, and everything that can be deepened within each.
+      `- I'm completing Harvard University's CS50x, one of the most well recognized computer science courses in the world. This course is responsible for all my core knowledge in algorithms, data structures, memory allocation, and many more of this science's concepts.
+      
+      - I have over 700 hours of courses completed at Alura, one of the biggest tech online schools in Brazil. This knowledge covers all the necessary technologies in Front-End development, and everything that can be deepened within each.
       
       - I graduated in Animation Design at Faculdade Melies, one of the most prestigious art colleges in South America. This graduation gave me all the foundation of the art, animation and modelling concepts I have today.`
    ],
