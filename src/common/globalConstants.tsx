@@ -55,7 +55,7 @@ export const titlesAndDescriptions:{[key: string]: string[]} = {
    experience: [`Experience`,
       `Let's explore what I'm actually capable of doing!
       
-      The tools I use on my work and projects include NextJS, React, Typescript, JavaScript, Tailwind, SASS, CSS, HTML and Jest for the Front End; REST APIs, NodeJS, Express, MongoDB, JWT and NoSQL for the Back-End; and Git for code versioning.`
+      The tools I use on my work and projects include NextJS, React, Typescript, JavaScript, Tailwind, SASS, CSS, HTML and Jest for the Front End; REST APIs, NodeJS, Express, MongoDB, JWT and NoSQL for the Back-End; Git and GitHub for code versioning; The MVC project pattern for software architecture; and the SCRUM agile methodology for team productivity management.`
    ],
    experience1: [`Web Developer Intern`,
       `Rumo Soluções`,
