@@ -6,6 +6,12 @@ import IntroAnimation from "../components/IntroAnimation";
 import LoadingScreen from "../components/LoadingScreen";
 import TextboxSelector from "../components/TextboxSelector";
 
+export async function getStaticProps(ctx: any){
+   return {
+      props: {}
+   }
+}
+
 const stylesCanvasContainer = `h-full w-full`
 
 export default function Home() {
