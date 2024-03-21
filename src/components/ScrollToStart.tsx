@@ -13,26 +13,26 @@ export default function ScrollToStart(){
    const arrowRef = useRef<SVGSVGElement>(null)
    const activeSection = useActiveSection()
 
-   const [containerIsVisible, setContainerIsVisible] = useState(false)
+   const [containerIsVisible, setContainerIsVisible] = useState(true)
 
    useEffect(()=>{
-      setTimeout(() => {
-         if(containerRef.current){
+      if(containerIsVisible){
+         setTimeout(() => {
             gsap.to(containerRef.current, {
                duration: 0.5,
-				   ease: Linear.easeInOut,
+               ease: Linear.easeInOut,
                opacity: '100%'
             })
-
+            
             gsap.to(arrowRef.current, {
                duration: 2,
                repeat: -1,
                translateY: -8,
                yoyo: true,
-				   yoyoEase: Linear.easeNone,
+               yoyoEase: Linear.easeNone,
             })
-         }
-      }, 10000)
+         }, 10000)
+      }
    }, [containerIsVisible])
 
    useEffect(()=>{
@@ -42,7 +42,7 @@ export default function ScrollToStart(){
          setContainerIsVisible(false)
       }
    }, [activeSection])
-
+   
    return (
       <>{containerIsVisible ?
          <div className={container} ref={containerRef}>
