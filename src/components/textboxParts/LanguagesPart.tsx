@@ -9,8 +9,8 @@ export default function LanguagesPart(){
       <p className={stylesTitle}>- Languages:</p>
       <p className={stylesParagraph}>Portuguese: Native;</p>
       <p className={stylesParagraph}>English: Fluent;</p>
-      <p className={stylesParagraph}>Spanish: Intermediary;</p>
-      <p className={stylesParagraph}>German: Intermediary (Currently Studying)</p>
+      <p className={stylesParagraph}>Spanish: Advanced;</p>
+      <p className={stylesParagraph}>German: Intermediary (Currently Studying);</p>
       </>
    )
 }

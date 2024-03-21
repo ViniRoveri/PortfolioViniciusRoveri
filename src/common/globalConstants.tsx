@@ -13,14 +13,14 @@ export const animationsDelays = {
 
 export const sitesLinks:{[key: string]: string} = {
    experience1: '',
-   experience2: 'https://vrplanner.vercel.app/',
-   experience3: 'https://whatshouldilisten.vercel.app/'
+   experience2: '',
+   experience3: ''
 }
 
 export const reposLinks:{[key: string]: string} = {
    experience1: '',
-   experience2: 'https://github.com/ViniRoveri/VRPlanner',
-   experience3: 'https://github.com/ViniRoveri/WhatShouldIListen'
+   experience2: 'https://github.com/ViniRoveri/PortfolioViniciusRoveri',
+   experience3: ''
 }
 
 export const sectionsScrollOffsets:{[key: string]: number} = {
@@ -47,7 +47,7 @@ export const sphereRotations:{[key: string]: number} = {
 
 export const titlesAndDescriptions:{[key: string]: string[]} = {
    introduction: [`Vinícius Roveri Rocha`,
-      `Hi! My name is Vinícius and I'm a Front End Developer and Animator, specialized in Web Development with React since August 2022!`
+      `Hi! My name is Vinícius and I'm a Web Developer and Animator, specialized in Front-End Development with React since August 2022!`
    ],
    aboutMe: [`About Me`, 
       `Graduated in Animation Design and migrating to a career as a programmer, throughout my journey I always knew how to combine technical knowledge with an artistic vein, and I used this to bring a differential to any project I participated in, always bringing together the best of the valences of reasoning logic and solving problems with the lightness and creativity inherent to art.`
@@ -55,27 +55,27 @@ export const titlesAndDescriptions:{[key: string]: string[]} = {
    experience: [`Experience`,
       `Let's explore what I'm actually capable of doing!
       
-      The tools I use on my work and projects include NextJS, React, Typescript, JavaScript, Tailwind, SASS, CSS, HTML and Jest for the Front End; REST APIs, NodeJS, Express, MongoDB, JWT, SQL and NoSQL for the Back-End; Git and GitHub for code versioning; The MVC project pattern for software architecture; and the SCRUM agile methodology for team productivity management.`
+      The tools I use on my work and projects include NextJS, React, Typescript, JavaScript, Tailwind, SASS, CSS, HTML and Jest for the Front End; REST APIs, NodeJS, Express, MongoDB, JWT, SQL and NoSQL for the Back-End; Git and GitHub for code versioning; Both the MVC and the Razor Pages project patterns for software architecture; and the SCRUM agile methodology for team productivity management.`
    ],
    experience1: [`Web Developer Intern`,
       `Rumo Soluções`,
       `04/2023 to Present`,
       `Working as an intern in all areas of web development at Rumo, a Microsoft Business Partner and IT service company. I work creating full-stack web applications for bussinesses, with my main role being integrating front-ends made in HTML, CSS and JavaScript, with back-ends created with .NET in C#, all using the MVC project pattern for software architecture along with the SCRUM agile methodology for team productivity management.`
    ],
-   experience2: [`VR Planner`,
+   experience2: [`My Portfolio`,
       `Personal Project`,
-      `02/2023`,
-      `I developed a fullstack web application of a whole planner with a clean and aesthetic UI that includes a calendar, your events list of any given period you choose, complete events management and other quality of life tools for your planning, all customizable by each user with a full authentication via JWT made in the backend also built by me. The front-end was made mainly with Next.js for React with Typescript, Tailwind CSS, and Framer-Motion for animations. For the back-end I used the JavaScript stack of Node.js with Express and MongoDB to control the project's NoSQL REST API.`
+      `01/2023`,
+      `The project you are seeing right now! This is the project where I showcase all my abilities in Web Development, UX design, Motion Graphics and 3D Modelling, all merged together in one single piece. Made using various professional and industry standard tools for the front-end development such as the NextJS framework, GSAP for JavaScript animations, React Three Fiber which is an extension of the ThreeJS library, Bodymovin & Lottie-Web for making After Effects animations web-ready, and a whole more that when combined with the standard NextJS, React, Typescript & Tailwind, create the art you see on the screen.`
    ],
-   experience3: [`What Should I Listen`,
-      `Personal Project`,
-      `12/2022`,
-      `I developed a website with React, Typescript and SASS/SCSS to generate personalized music recommendations for the users. These recommendations can be based on their taste in artist, genre or vibe. The users can also use the random recommendation button, and a Favorites tab to save the songs they may want. By clicking on a song you can see all information about it, in addition to the music video to be heard right away. The songs are stored in a NoSQL REST API that I created using the MERN stack. This API is controlled locally via an interface I also developed specifically for it.`
+   experience3: [`My next experience?`,
+      `???`,
+      `??/????`,
+      `What will be my next experience? Stay tuned as this gets updated soon!`
    ],
    education: [`Education`,
-      `- I'm completing Harvard University's CS50x, one of the most well recognized computer science courses in the world. This course is responsible for all my core knowledge in algorithms, data structures, memory allocation, and many more of this science's concepts.
+      `- I have over 700 hours of courses completed at Alura, one of the biggest tech online schools in Brazil. This knowledge covers all the necessary technologies in Web Development, and everything that can be deepened within each.
       
-      - I have over 700 hours of courses completed at Alura, one of the biggest tech online schools in Brazil. This knowledge covers all the necessary technologies in Front-End development, and everything that can be deepened within each.
+      - I'm completing Harvard University's CS50x, one of the most well recognized computer science courses in the world. This course is responsible for all my core knowledge in algorithms, data structures, memory allocation, and many more of this science's concepts.
       
       - I graduated in Animation Design at Faculdade Melies, one of the most prestigious art colleges in South America. This graduation gave me all the foundation of the art, animation and modelling concepts I have today.`
    ],

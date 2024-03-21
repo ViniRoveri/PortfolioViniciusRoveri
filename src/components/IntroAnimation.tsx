@@ -7,7 +7,7 @@ const stylesAnimationDiv = `max-w-[400px] w-[40%]`
 
 export default function IntroAnimation(){
    const animationDiv = useRef(null)
-   const [containerDisplay,setContainerDisplay] = useState('flex')
+   const [containerDisplay, setContainerDisplay] = useState('flex')
 
 	useEffect(()=>{
 		if(animationDiv.current){
@@ -25,7 +25,7 @@ export default function IntroAnimation(){
 				setContainerDisplay('none')
 			})
 
-			return ()=>{introAnimation.destroy()}
+			return () => introAnimation.destroy()
 		}
 	},[])
 

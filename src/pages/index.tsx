@@ -5,6 +5,7 @@ import CanvasContent from "../components/CanvasContent";
 import IntroAnimation from "../components/IntroAnimation";
 import LoadingScreen from "../components/LoadingScreen";
 import TextboxSelector from "../components/TextboxSelector";
+import ScrollToStart from "@/components/ScrollToStart";
 
 const stylesCanvasContainer = `h-full w-full`
 
@@ -31,6 +32,8 @@ export default function Home() {
 
          <IntroAnimation />
 
+         <ScrollToStart/>
+         
          <section className={`${stylesCanvasContainer} ${canvasCanAppear ? '' : 'hidden'}`}>
             <Canvas camera={{
                position: [0, 0, 300]
