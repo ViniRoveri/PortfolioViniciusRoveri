@@ -60,7 +60,7 @@ export const titlesAndDescriptions:{[key: string]: string[]} = {
    experience1: [`Web Developer Intern`,
       `Rumo Soluções`,
       `04/2023 to Present`,
-      `Working as an intern in all areas of web development at Rumo, a Microsoft Business Partner and IT service company. I work creating full-stack web applications for bussinesses, with my main role being integrating front-ends made in HTML, CSS and JavaScript, with back-ends created with .NET in C#, all using the MVC project pattern for software architecture along with the SCRUM agile methodology for team productivity management.`
+      `Working as an intern in all areas of web development at Rumo, a Microsoft Business Partner and IT service company. I work creating full-stack web applications for bussinesses, with my main role being integrating front-ends made in HTML, CSS and JavaScript, with back-ends created with .NET in C#, all using both the MVC and the Razor Pages project patterns for software architecture along with the SCRUM agile methodology for team productivity management.`
    ],
    experience2: [`My Portfolio`,
       `Personal Project`,
