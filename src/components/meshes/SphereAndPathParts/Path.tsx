@@ -19,9 +19,8 @@ type GLTFResult = GLTF & {
 		['3-ComputerScreen']: THREE.Mesh
 		['3-ComputerScreenLetters']: THREE.Mesh
 		['4-RumoLogo']: THREE.Mesh
-		['5-MouseCursor']: THREE.Mesh
-		['6-QuestionMark']: THREE.Mesh
-		['6-QuestionMarkPoint']: THREE.Mesh
+		['5-RumoLogo']: THREE.Mesh
+		['6-MouseCursor']: THREE.Mesh
 		['7-GraduationHat']: THREE.Mesh
 		['7-GraduationHatThing']: THREE.Mesh
 		['8-Link']: THREE.Mesh
@@ -107,16 +106,12 @@ export default function Path(props: JSX.IntrinsicElements['group']) {
 					<meshStandardMaterial color='#0fe8f9' {...iconsStandardMaterialsConfig} />
 				</mesh>
 
-				<mesh geometry={nodes['5-MouseCursor'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.experience2)}>
+				<mesh geometry={nodes['5-RumoLogo'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.experience1)}>
+					<meshStandardMaterial color='#0fe8f9' {...iconsStandardMaterialsConfig} />
+				</mesh>
+
+				<mesh geometry={nodes['6-MouseCursor'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.experience2)}>
 					<meshStandardMaterial color='#ccb9a3' {...iconsStandardMaterialsConfig} />
-				</mesh>
-
-				<mesh geometry={nodes['6-QuestionMark'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.experience3)}>
-					<meshStandardMaterial color='#9980ff' {...iconsStandardMaterialsConfig} />
-				</mesh>
-
-				<mesh geometry={nodes['6-QuestionMarkPoint'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.experience3)}>
-					<meshStandardMaterial color='#9980ff' {...iconsStandardMaterialsConfig} />
 				</mesh>
 
 				<mesh geometry={nodes['7-GraduationHat'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.education)}>
