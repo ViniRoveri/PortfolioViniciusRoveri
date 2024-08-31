@@ -106,11 +106,11 @@ export default function Path(props: JSX.IntrinsicElements['group']) {
 					<meshStandardMaterial color='#0fe8f9' {...iconsStandardMaterialsConfig} />
 				</mesh>
 
-				<mesh geometry={nodes['5-RumoLogo'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.experience1)}>
+				<mesh geometry={nodes['5-RumoLogo'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.experience2)}>
 					<meshStandardMaterial color='#0fe8f9' {...iconsStandardMaterialsConfig} />
 				</mesh>
 
-				<mesh geometry={nodes['6-MouseCursor'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.experience2)}>
+				<mesh geometry={nodes['6-MouseCursor'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.experience3)}>
 					<meshStandardMaterial color='#ccb9a3' {...iconsStandardMaterialsConfig} />
 				</mesh>
 
