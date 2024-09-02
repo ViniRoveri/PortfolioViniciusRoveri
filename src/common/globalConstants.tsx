@@ -64,7 +64,7 @@ export const titlesAndDescriptions:{[key: string]: string[]} = {
    ],
    experience2: [`Web Developer Intern`,
       `Rumo Soluções`,
-      `04/2023 to 09/2024`,
+      `04/2023 to 08/2024`,
       `Worked as an intern in all areas of web development at Rumo. I worked creating full-stack web applications, with my main role being integrating front-ends made in HTML, CSS and JavaScript, with back-ends that I also created in C# using ASP.NET with the Entity Framework.`
    ],
    experience3: [`My Portfolio`,
