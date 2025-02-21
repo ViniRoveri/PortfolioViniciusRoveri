@@ -47,7 +47,7 @@ export const sphereRotations:{[key: string]: number} = {
 
 export const titlesAndDescriptions:{[key: string]: string[]} = {
    introduction: [`Vinícius Roveri Rocha`,
-      `Hi! My name is Vinícius Roveri and I'm a Web Developer and Animator specialized in Front-End Development since August 2022!`
+      `Hi! My name is Vinícius Roveri and I'm a Web Developer and Animator specialized in Front-End Development since 2022!`
    ],
    aboutMe: [`About Me`, 
       `Graduated in Animation Design and migrating to a career as a programmer, throughout my journey I always knew how to combine technical knowledge with an artistic vein, and I used this to bring a differential to any project I participated in, always bringing together the best of the valences of reasoning logic and solving problems with the lightness and creativity inherent to art.`
