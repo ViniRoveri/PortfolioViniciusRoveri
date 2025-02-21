@@ -6,7 +6,7 @@ import LanguagesPart from "./textboxParts/LanguagesPart"
 import LinksPart from "./textboxParts/linksParts/LinksPart"
 import ProjectLinks from "./textboxParts/ProjectLinks"
 
-const stylesSubtitleContainer = `flex items-enter justify-end mb-1.5 w-full
+const stylesSubtitleContainer = `flex flex-col items-end mb-1.5 w-full
 sm:mb-2
 md:mb-2.5
 lg:mb-3`
@@ -77,11 +77,8 @@ function TextboxSelector(){
          <>
          {isExperiencePart &&
             <div className={stylesSubtitleContainer}>
-               <p className={stylesSubtitle}>
-                  {textboxSubtitle}
-               </p>&nbsp;-&nbsp;<p>
-                  {textboxTime}
-               </p>
+               <p className={stylesSubtitle}>{textboxSubtitle}</p>
+               <p>{textboxTime}</p>
             </div>
          }
 

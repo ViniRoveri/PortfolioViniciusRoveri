@@ -55,12 +55,12 @@ export const titlesAndDescriptions:{[key: string]: string[]} = {
    experience: [`Experience`,
       `Let's explore what I'm actually capable of doing!
       
-      The tools I use on my work and projects mainly include NextJS, React, Typescript, JavaScript, Tailwind, SASS, CSS and HTML for the Front-End; REST APIs, NodeJS, Express, MongoDB, SQL and NoSQL for the Back-End; and Git and GitHub for code versioning.`
+      The tools I use on my work and projects mainly include NextJS, React, Typescript, JavaScript, Tailwind, SASS, CSS and HTML for the Front-End; REST APIs, NodeJS, Express, MongoDB, ASP.NET, SQL and NoSQL for the Back-End; and Git and GitHub for code versioning.`
    ],
    experience1: [`Web Developer`,
       `Rumo Soluções`,
       `09/2024 to Present`,
-      `Working as a web developer focused on front-end development at Rumo, a Microsoft Business Partner and IT service company. I create the front-end of SaaS web applications for bussinesses, and integrate them with the APIs to get any given screens' data. In front-end development it's used C# with Razor Pages of ASP.NET to both create the screens and connect to the API, which is made by microservices in ASP.NET with Entity Framework. I also work under the SCRUM agile methodology for team productivity management, and often participate on meetings for alignment of projects' business rules, both with clients and with other team members.`
+      `Working as a web developer focused on front-end development at Rumo, a Microsoft Business Partner and IT service company. I create the front-end of SaaS web applications for bussinesses, and work on the integration with their given APIs. In front-end development I use C# with Razor Pages of ASP.NET to both create the screens and connect to the APIs, which are made as microservices in ASP.NET with Entity Framework. I also work under the SCRUM agile methodology for team productivity management, and often participate on meetings for alignment of projects' business rules, both with clients and with other team members.`
    ],
    experience2: [`Web Developer Intern`,
       `Rumo Soluções`,
@@ -73,7 +73,7 @@ export const titlesAndDescriptions:{[key: string]: string[]} = {
       `The project you are seeing right now! This is the project where I showcase all my abilities in Web Development, UX design, Motion Graphics and 3D Modelling, all merged together in one single piece. Made using various professional and industry standard tools for the front-end development such as the NextJS framework, GSAP for JavaScript animations, React Three Fiber which is an extension of the ThreeJS library, Bodymovin & Lottie-Web for making After Effects animations web-ready, and a whole more that when combined with the standard NextJS, React, Typescript & Tailwind, create the art you see on the screen.`
    ],
    education: [`Education`,
-      `- I have over 700 hours of courses completed at Alura, one of the biggest tech online schools in Brazil. This knowledge covers all the necessary technologies in Web Development, and everything that can be deepened within each.
+      `- I have over 700 hours of courses completed at Alura, the biggest tech online school in Brazil. This knowledge, as already shown in the Projects and Tools parts, covers all the necessary technologies in Web Development, and everything that can be deepened within each.
       
       - I graduated in Animation Design at Faculdade Melies, one of the most prestigious art colleges in South America. This graduation gave me all the foundation of the art, animation and modelling concepts I have today.`
    ],
