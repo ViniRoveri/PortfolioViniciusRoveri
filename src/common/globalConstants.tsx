@@ -53,14 +53,14 @@ export const titlesAndDescriptions:{[key: string]: string[]} = {
       `Graduated in Animation Design and migrating to a career as a programmer, throughout my journey I always knew how to combine technical knowledge with an artistic vein, and I used this to bring a differential to any project I participated in, always bringing together the best of the valences of reasoning logic and solving problems with the lightness and creativity inherent to art.`
    ],
    experience: [`Experience`,
-      `Let's explore what I'm actually capable of doing!
+      `Let's explore what I'm capable of doing!
       
-      The tools I use on my work and projects mainly include NextJS, React, Typescript, JavaScript, Tailwind, SASS, CSS and HTML for the Front-End; REST APIs, NodeJS, Express, MongoDB, ASP.NET, SQL and NoSQL for the Back-End; and Git and GitHub for code versioning.`
+      The tools I use on my work and projects mainly include NextJS, React, Typescript, JavaScript, Tailwind, SASS, Razor Pages, CSS and HTML for the Front-End; REST APIs, C# with ASP.NET, NodeJS, Express, MongoDB, SQL and NoSQL for the Back-End; and Git for code versioning.`
    ],
    experience1: [`Web Developer`,
       `Rumo Soluções`,
       `09/2024 to Present`,
-      `Working as a web developer focused on front-end development at Rumo, a Microsoft Business Partner and IT service company. I create the front-end of SaaS web applications for bussinesses, and work on the integration with their given APIs. In front-end development I use C# with Razor Pages of ASP.NET to both create the screens and connect to the APIs, which are made as microservices in ASP.NET with Entity Framework. I also work under the SCRUM agile methodology for team productivity management, and often participate on meetings for alignment of projects' business rules, both with clients and with other team members.`
+      `Working as a web developer, acting as full-stack with but heavily focused on front-end, I use Asp.Net and Razor Pages to create SaaS apps for businesses focusing on delivering them the most user-friendly and performatic way possible. Thanks to my art background I also work on the design of the UI/UX, and that expertise combined with my coding skills makes me the most reliable and prestigious front-end dev of the company currently. My work also extends to the planning of the projects, with me being in many alignment meetings both with our clients and with the other devs of the team. Finally, we work under the Scrum methodology, managing to deliver the greatest final product within the most efficient time possible.`
    ],
    experience2: [`Web Developer Intern`,
       `Rumo Soluções`,
@@ -69,7 +69,7 @@ export const titlesAndDescriptions:{[key: string]: string[]} = {
    ],
    experience3: [`My Portfolio`,
       `Personal Project`,
-      `01/2023`,
+      `12/2022`,
       `The project you are seeing right now! This is the project where I showcase all my abilities in Web Development, UX design, Motion Graphics and 3D Modelling, all merged together in one single piece. Made using various professional and industry standard tools for the front-end development such as the NextJS framework, GSAP for JavaScript animations, React Three Fiber which is an extension of the ThreeJS library, Bodymovin & Lottie-Web for making After Effects animations web-ready, and a whole more that when combined with the standard NextJS, React, Typescript & Tailwind, create the art you see on the screen.`
    ],
    education: [`Education`,
