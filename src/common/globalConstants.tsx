@@ -59,7 +59,7 @@ export const titlesAndDescriptions:{[key: string]: string[]} = {
    ],
    experience1: [`Web Developer`,
       `Rumo Soluções`,
-      `04/2023 to Present`,
+      `09/2024 to Present`,
       `Working as a web developer, acting as full-stack but heavily focused on front-end, I use Asp.Net and Razor Pages, allied to the HTML, CSS and JavaScript, to create SaaS apps for businesses focusing on delivering them the most user-friendly and performatic way possible. Thanks to my art background I also work on the design of the UI/UX, and that expertise combined with my coding skills makes me the most reliable and prestigious front-end dev of the company currently. My work also extends to the planning of the projects, with me being in many alignment meetings both with our clients and with the other devs of the team, and also to the CI/CD with me using Azure to manage the pipelines that deploy the projects. Finally, we work under the Scrum methodology, managing to deliver the greatest final product within the most efficient time possible.`
    ],
    experience2: [`Web Developer Intern`,
