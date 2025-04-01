@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import IntroAnimationData from '../assets/animations/IntroAnimationData.json'
+import Lottie from "lottie-web"
 
 const stylesContainer = `absolute h-screen items-center justify-center left-0 overflow-hidden top-0 w-screen`
 const stylesAnimationDiv = `max-w-[400px] w-[40%]`
@@ -8,11 +9,9 @@ export default function IntroAnimation(){
    const animationDiv = useRef(null)
    const [containerDisplay, setContainerDisplay] = useState('flex')
 
-	async function triggerAnimation(){
-		const Lottie = await import('lottie-web')
-
+	useEffect(()=>{
 		if(animationDiv.current){
-			const introAnimation = Lottie.default.loadAnimation({
+			const introAnimation = Lottie.loadAnimation({
 				animationData: IntroAnimationData,
 				autoplay: true,
 				container: animationDiv.current,
@@ -27,12 +26,6 @@ export default function IntroAnimation(){
 			})
 
 			return () => introAnimation.destroy()
-		}
-	}
-
-	useEffect(()=>{
-		return () => {
-			triggerAnimation()
 		}
 	}, [])
 
