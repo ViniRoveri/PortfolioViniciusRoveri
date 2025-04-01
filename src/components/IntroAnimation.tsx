@@ -1,4 +1,3 @@
-import Lottie from "lottie-web"
 import { useEffect, useRef, useState } from "react"
 import IntroAnimationData from '../assets/animations/IntroAnimationData.json'
 
@@ -9,9 +8,11 @@ export default function IntroAnimation(){
    const animationDiv = useRef(null)
    const [containerDisplay, setContainerDisplay] = useState('flex')
 
-	useEffect(()=>{
+	async function triggerAnimation(){
+		const Lottie = await import('lottie-web')
+
 		if(animationDiv.current){
-			const introAnimation = Lottie.loadAnimation({
+			const introAnimation = Lottie.default.loadAnimation({
 				animationData: IntroAnimationData,
 				autoplay: true,
 				container: animationDiv.current,
@@ -27,7 +28,13 @@ export default function IntroAnimation(){
 
 			return () => introAnimation.destroy()
 		}
-	},[])
+	}
+
+	useEffect(()=>{
+		return () => {
+			triggerAnimation()
+		}
+	}, [])
 
    return(
       <section className={stylesContainer} style={{
