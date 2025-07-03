@@ -13,13 +13,13 @@ export const animationsDelays = {
 
 export const sitesLinks:{[key: string]: string} = {
    experience1: '',
-   experience2: 'https://worldcupmuseum.vercel.app/',
+   experience2: '',
    experience3: ''
 }
 
 export const reposLinks:{[key: string]: string} = {
    experience1: '',
-   experience2: 'https://github.com/ViniRoveri/WorldCupMuseum',
+   experience2: '',
    experience3: 'https://github.com/ViniRoveri/PortfolioViniciusRoveri'
 }
 
@@ -45,6 +45,29 @@ export const sphereRotations:{[key: string]: number} = {
    links: 1
 }
 
+function getCurrentJobTime(startMonth: number, startYear: number){
+   let jobTime =''
+   const today = new Date()
+   const currentYear = today.getFullYear()
+   const currentMonth = today.getMonth() + 1
+
+   let yearsDiff = currentYear - startYear
+   let monthDiff = currentMonth - startMonth
+   if(monthDiff < 0){
+      yearsDiff -= 1
+      monthDiff += 12
+   }
+
+   if(yearsDiff > 0){
+      jobTime = `${yearsDiff} year${yearsDiff > 1 ? 's' : ''}${monthDiff > 0 ? ', ' : ''}`
+   }
+   if(monthDiff > 0){
+      jobTime += `${monthDiff} mo${monthDiff > 1 ? 's' : ''}`
+   }
+
+   return jobTime
+}
+
 export const titlesAndDescriptions:{[key: string]: string[]} = {
    introduction: [`Vinícius Roveri Rocha`,
       `Hi! My name is Vinícius Roveri and I'm a Web Developer and Animator specialized in Front-End Development since 2022!`
@@ -58,14 +81,14 @@ export const titlesAndDescriptions:{[key: string]: string[]} = {
       The tools I use on my work and projects mainly include NextJS, React, Typescript, JavaScript, Tailwind, SASS, Razor Pages, CSS and HTML for the Front-End; REST APIs, C# with ASP.NET, NodeJS, Express, MongoDB, SQL and NoSQL for the Back-End; and Git for code versioning.`
    ],
    experience1: [`Web Developer`,
-      `Rumo Soluções`,
-      `04/2023 to 03/2025`,
-      `Working as a web developer, acting as full-stack but heavily focused on front-end, I use Asp.Net and Razor Pages, allied to the HTML, CSS and JavaScript, to create SaaS apps for businesses focusing on delivering them the most user-friendly and performatic way possible. Thanks to my art background I also work on the design of the UI/UX, and that expertise combined with my coding skills makes me the most reliable and prestigious front-end dev of the company currently. My work also extends to the planning of the projects, with me being in many alignment meetings both with our clients and with the other devs of the team, and also to the CI/CD with me using Azure to manage the pipelines that deploy the projects. Finally, we work under the Scrum methodology, managing to deliver the greatest final product within the most efficient time possible.`
+      `Avanade`,
+      `06/2025 to Present (${getCurrentJobTime(6, 2025)})`,
+      `Working with international teams for projects of Avanade's biggest clients all around the world, with the stack consisting mainly of Next.js and React on the Frontend; C# and Python on the Backend; allied with the use of the Azure platform for infrastructure and cloud computing.`
    ],
-   experience2: [`The World Cup Museum`,
-      `Personal Project`,
-      `04/2025`,
-      `An app with the timeline of the World Cups along with interactive 3D models of the memorable moments from each game. Made mainly with Next.js, Tailwind, GSAP and React Three, it combines the best of my clean UI/UX Design, JavaScript animations and 3D Modelling skills, working seamlessly to make the app the most intuitive and fun to use as possible.`
+   experience2: [`Web Developer`,
+      `Rumo Soluções`,
+      `04/2023 to 04/2025 (2 years)`,
+      `Worked as a web developer, acting as full-stack but heavily focused on front-end, I used Asp.Net and Razor Pages, allied to the HTML, CSS and JavaScript, to create SaaS apps for businesses focusing on delivering them the most user-friendly and performatic way possible. Thanks to my art background I also worked on the design of the UI/UX, and that expertise combined with my coding skills made me the most reliable and prestigious front-end dev of the company the time I was there. My work also extended to the planning of the projects, with me being in many alignment meetings both with our clients and with the other devs of the team, and also to the CI/CD with me using Azure to manage the pipelines that deploy the projects. Finally, I worked under the Scrum methodology, managing to deliver the greatest final product within the most efficient time possible.`
    ],
    experience3: [`My Portfolio`,
       `Personal Project`,

@@ -13,22 +13,20 @@ import { useFrame } from '@react-three/fiber'
 type GLTFResult = GLTF & {
   nodes: {
     United_Path: THREE.Mesh
+    ['1-Letters']: THREE.Mesh
     ['2-Profile']: THREE.Mesh
     ['3-Computer']: THREE.Mesh
     ['3-ComputerScreen']: THREE.Mesh
+    ['3-ComputerScreenLetters']: THREE.Mesh
+    ['4-Avanade1']: THREE.Mesh
+    ['4-Avanade2']: THREE.Mesh
+    ['4-Avanade3']: THREE.Mesh
+    ['4-Avanade4']: THREE.Mesh
+    ['5-RumoLogo']: THREE.Mesh
+    ['6-MouseCursor']: THREE.Mesh
     ['7-GraduationHat']: THREE.Mesh
     ['7-GraduationHatThing']: THREE.Mesh
     ['8-Link']: THREE.Mesh
-    ['1-Letters']: THREE.Mesh
-    ['3-ComputerScreenLetters']: THREE.Mesh
-    ['4-RumoLogo']: THREE.Mesh
-    ['6-MouseCursor']: THREE.Mesh
-    Mesh033: THREE.Mesh
-    Mesh033_1: THREE.Mesh
-  }
-  materials: {
-    ['Ball White']: THREE.MeshStandardMaterial
-    ['Ball Black']: THREE.MeshStandardMaterial
   }
 }
 
@@ -37,9 +35,9 @@ const iconsStandardMaterialsConfig = {
 	roughness: 0.5
 }
 
-export default function Path(props: JSX.IntrinsicElements['group']) {
+export default  function Model(props: JSX.IntrinsicElements['group']) {
   const scroll = useScroll()
-  
+    
   const group = useRef<THREE.Group>(null)
 
   const offsetsKeys = Object.keys(sectionsScrollOffsets)
@@ -79,19 +77,19 @@ export default function Path(props: JSX.IntrinsicElements['group']) {
     scroll.el.scrollTo({top: targetPixel, behavior: 'smooth'})
   }
 
-  const { nodes, materials } = useGLTF('/assets/3d/Path.gltf') as GLTFResult
+  const { nodes } = useGLTF('/assets/3d/Path.gltf') as GLTFResult
 
   return (
     <group {...props} dispose={null} ref={group}>
       <mesh geometry={nodes.United_Path.geometry}>
 				<meshStandardMaterial color='#ffe7cc' roughness={0.1} />
-			</mesh>
+      </mesh>
 
       <Float floatIntensity={1.5} floatingRange={[0, 2]} rotationIntensity={0.1} speed={2}>
         <mesh geometry={nodes['1-Letters'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.introduction)}>
           <meshStandardMaterial color='#ccc' {...iconsStandardMaterialsConfig} />
         </mesh>
-
+        
         <mesh geometry={nodes['2-Profile'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.aboutMe)}>
           <meshStandardMaterial color='#b2fcff' {...iconsStandardMaterialsConfig} />
         </mesh>
@@ -108,17 +106,30 @@ export default function Path(props: JSX.IntrinsicElements['group']) {
           <meshStandardMaterial color='#e5e5e5' {...iconsStandardMaterialsConfig} />
         </mesh>
 
-        <mesh geometry={nodes['4-RumoLogo'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.experience1)}>
-          <meshStandardMaterial color='#0fe8f9' {...iconsStandardMaterialsConfig} />
+        <mesh geometry={nodes['4-Avanade1'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.experience1)}>
+          <meshStandardMaterial color='#c80000' {...iconsStandardMaterialsConfig} />
         </mesh>
 
-        <mesh geometry={nodes.Mesh033.geometry} material={materials['Ball White']} onClick={() => scrollToSection(sectionsScrollOffsets.experience2)}/>
-        <mesh geometry={nodes.Mesh033_1.geometry} material={materials['Ball Black']} onClick={() => scrollToSection(sectionsScrollOffsets.experience2)}/>
+        <mesh geometry={nodes['4-Avanade2'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.experience1)}>
+          <meshStandardMaterial color='#ff5800' {...iconsStandardMaterialsConfig} />
+        </mesh>
+
+        <mesh geometry={nodes['4-Avanade3'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.experience1)}>
+          <meshStandardMaterial color='#ff5800' {...iconsStandardMaterialsConfig} />
+        </mesh>
+
+        <mesh geometry={nodes['4-Avanade4'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.experience1)}>
+          <meshStandardMaterial color='#ffb414' {...iconsStandardMaterialsConfig} />
+        </mesh>
+
+        <mesh geometry={nodes['5-RumoLogo'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.experience2)}>
+          <meshStandardMaterial color='#0fe8f9' {...iconsStandardMaterialsConfig} />
+        </mesh>
 
         <mesh geometry={nodes['6-MouseCursor'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.experience3)}>
           <meshStandardMaterial color='#ccb9a3' {...iconsStandardMaterialsConfig} />
         </mesh>
-
+        
         <mesh geometry={nodes['7-GraduationHat'].geometry} onClick={() => scrollToSection(sectionsScrollOffsets.education)}>
           <meshStandardMaterial color='#002780' {...iconsStandardMaterialsConfig} />
         </mesh>
