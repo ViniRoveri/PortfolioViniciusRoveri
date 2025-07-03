@@ -14,7 +14,7 @@ export default function IntroAnimation(){
 		const Lottie = await import("lottie-web")
 
 		if(animationDiv.current){
-			introAnimation = Lottie.loadAnimation({
+			introAnimation = (Lottie as any).loadAnimation({
 				animationData: IntroAnimationData,
 				autoplay: true,
 				container: animationDiv.current,
