@@ -83,7 +83,7 @@ export const titlesAndDescriptions:{[key: string]: string[]} = {
    experience1: [`Web Developer`,
       `Avanade`,
       `06/2025 to Present (${getCurrentJobTime(6, 2025)})`,
-      `Working with international teams for projects of Avanade's biggest clients all around the world, with the stack consisting mainly of Next.js and React on the Frontend; C# and Python on the Backend; allied with the use of the Azure platform for infrastructure and cloud computing.`
+      `Working as a Web Developer with international teams for projects of Avanade's biggest clients all around the world. I work along teams with people from the US, Canada, Japan, India and Philippines. I use the stack of Next.js and React on the Frontend; C# for ASP.NET and Python for Flask on the Backend; allied with the use of the Azure platform for Infrastructure, CI/CD and Cloud Computing. On top of the development, I'm also responsible for the UI/UX layout definition of the apps, thanks to my previous knowledge and graduation on the visual/design field. Every project also uses the Scrum agile methodology for team productivity management, and the Git tools for code maintenance.`
    ],
    experience2: [`Web Developer`,
       `Rumo Soluções`,
