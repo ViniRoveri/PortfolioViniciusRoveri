@@ -17,9 +17,9 @@ export default function LinksPart(){
       
       <LinkWithIcon image={ResumeIcon} link={ResumeLink} text='My Resume'/>
 
-      <LinkWithIcon image={AfterEffectsIcon} link={BehanceLink} text='My Animations'/>
-      
       <LinkWithIcon image={GithubIcon} link={GithubLink} text='My GitHub'/>
+      
+      <LinkWithIcon image={AfterEffectsIcon} link={BehanceLink} text='My Animations'/>
       </>
    )
 }
