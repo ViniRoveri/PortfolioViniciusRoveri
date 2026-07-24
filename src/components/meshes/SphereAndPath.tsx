@@ -1,74 +1,88 @@
-import { useScroll } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
-import gsap, { Power4 } from "gsap"
-import { animationsDelays, animationsDurations, sectionsScrollOffsets } from "@/common/globalConstants";
-import { useActiveSection, useSetActiveSection } from "@/common/hooks";
-import Sphere from "./SphereAndPathParts/Sphere";
-import Path from './SphereAndPathParts/Path'
+import { Dispatch, SetStateAction, useRef } from "react"
+import * as THREE from "three"
+import Path from "./sphereAndPath/Path"
+import Sphere from "./sphereAndPath/Sphere"
+import { useFrame } from "@react-three/fiber"
+import { useScroll } from "@react-three/drei"
+import scrollOffsets from "@/domain/constants/scrollOffsets"
+import sphereZRotations from "@/domain/constants/sphereZRotations"
+import ScrollSection from "@/domain/types/ScrollSection"
 
-export default function SphereAndPath(props: JSX.IntrinsicElements['group']){
+type Props = {
+   introAnimationFinished: boolean
+   scrollSection: ScrollSection
+   setScrollSection: Dispatch<SetStateAction<ScrollSection>>
+}
+
+export default function SphereAndPath(props: Props){
    const scroll = useScroll()
-   const activeSection = useActiveSection()
-   const setActiveSection = useSetActiveSection()
 
-   const [introIsDone,setIntroIsDone] = useState(false)
-   
-   const group = useRef<THREE.Group>(null)
+   const groupRef = useRef<THREE.Group>(null)
 
-   const offsetsKeys = Object.keys(sectionsScrollOffsets)
-   const groupScale = 0.8
-   const groupStartYPosition = 500
-   const groupFinalYPosition = -450
-   const groupFinalXRotation = 0.7
+   const groupStartXRotation = 0.7
+   const groupFinalXRotation = 5.5
+   const groupStartYPosition = -450
+   const groupFinalYPosition = 3860
+   const scrollOffsetKeys = Object.keys(scrollOffsets).map(key => key as ScrollSection)
+   const scrollOffsetValues = Object.values(scrollOffsets)
+   const sphereZRotationValues = Object.values(sphereZRotations)
 
-   function updateActiveSection(){      
-      if(scroll.offset < sectionsScrollOffsets[offsetsKeys[0]] && activeSection !== 'initial'){
-         setActiveSection('')
-         return
-      }
-   
-      offsetsKeys.forEach((key,index)=>{
-         const nextOffset = sectionsScrollOffsets[offsetsKeys[index + 1]]
-   
-         if(scroll.offset >= sectionsScrollOffsets[key] && activeSection !== key){
-            if(index === offsetsKeys.length - 1){
-               setActiveSection(key)
-            }else if(scroll.offset < nextOffset){
-               setActiveSection(key)
-            }
+   function getGroupZRotation(): number {
+      if (scroll.offset <= scrollOffsets.introduction) return 0
+      if(scroll.offset >= scrollOffsets.links) return sphereZRotations.links
+
+      let newGroupZRotation = 0
+      scrollOffsetValues.forEach((currentOffset, index) => {
+         if(currentOffset == 0) return
+
+         const previousOffset = scrollOffsetValues[index - 1]
+
+         if (scroll.offset > previousOffset && scroll.offset <= currentOffset) {
+            const offsetDifference = currentOffset - previousOffset
+
+            const previousRotation = sphereZRotationValues[index - 1]
+            const rotationDifference = sphereZRotationValues[index] - previousRotation
+
+            newGroupZRotation = previousRotation + (rotationDifference * scroll.range(previousOffset, offsetDifference))
+            return
+         }
+      })
+
+      return newGroupZRotation
+   }
+
+   function updateScrollSection(){   
+      let updated = false
+
+      scrollOffsetKeys.forEach((key, index) => {
+         if(index === 0 || updated) return
+         if(index === 1 && props.scrollSection === scrollOffsetKeys[0]) return
+
+         const nextOffset = scrollOffsetValues[index + 1]
+         
+         if(
+            scroll.offset >= scrollOffsets[key] 
+            && (scroll.offset < nextOffset || !nextOffset) 
+            && props.scrollSection !== key
+         ){
+            props.setScrollSection(key)
+            updated = true
          }
       })
    }
 
-   useEffect(()=>{
-      if (group.current) {
-			gsap.from(group.current.position, {
-            delay: animationsDelays.sphereAndPath,
-				duration: animationsDurations.sphereAndPath,
-				ease: Power4.easeOut,
-				y: groupStartYPosition
-			})
+   useFrame(() => {
+      if(!groupRef.current) return
 
-         const setIntroIsDoneDelay = animationsDelays.sphereAndPath + animationsDurations.sphereAndPath
-         setTimeout(()=>{
-            setIntroIsDone(true)
-         }, setIntroIsDoneDelay * 1000)
-		}
-   },[])
+      groupRef.current.position.y = groupStartYPosition - (groupFinalYPosition * scroll.range(1/14, 13/14))
+      groupRef.current.rotation.x = groupStartXRotation - (groupFinalXRotation * scroll.range(1/14, 13/14))
+      groupRef.current.rotation.z = getGroupZRotation()
 
-   useFrame(()=>{
-      if(introIsDone && group.current){
-         group.current.position.y = groupFinalYPosition - (3860 * scroll.range(1/14, 13/14))
-         
-         group.current.rotation.x = groupFinalXRotation - (5.5 * scroll.range(1/14, 13/14))
-         
-         updateActiveSection()
-      }
+      updateScrollSection()
    })
-
-   return(
-      <group ref={group} {...props} position={[0,groupFinalYPosition,0]} scale={groupScale} rotation={[groupFinalXRotation,0,0]}>
+   
+   return (
+      <group ref={groupRef} scale={0.8}>
          <Path/>
          <Sphere/>
       </group>

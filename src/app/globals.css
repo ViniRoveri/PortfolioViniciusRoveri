@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Inter:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+   --color-vr-white: #eee;
+   --color-vr-lightOrange: #ffe7cc;
+   --color-vr-orange: #ff9316;
+   --color-vr-darkOrange: #1a0f02;
+   --color-vr-black: #111;
+
+   --font-vr-title: 'Allerta Stencil', sans-serif;
+   --font-vr-text: 'Inter', sans-serif;
+}
+
+*{
+   box-sizing: border-box;
+   color: var(--color-vr-darkOrange);
+   font-family: var(--font-vr-text);
+   overflow-x: hidden;
+}
+
+::-webkit-scrollbar{
+   position: absolute;
+   height: 10px;
+   width: 10px;
+}
+
+::-webkit-scrollbar-track{
+   background: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+   background: var(--color-vr-orange);
+   border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+   background: #80490b;
+}

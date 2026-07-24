@@ -1,55 +1,49 @@
-import { ArrowLongDownIcon } from "@heroicons/react/24/solid"
+import { RiArrowDownLongLine } from "@remixicon/react"
+import gsap from "gsap"
 import { useEffect, useRef, useState } from "react"
-import gsap, { Linear } from 'gsap'
-import { useActiveSection } from "@/common/hooks"
 
+type Props = {
+   introAnimationFinished: boolean
+}
 
-const container = `bottom-4 fixed flex items-center justify-center py-2 opacity-0 w-full`
-const arrow = `fill-default-orange h-[40px] translate-y-2`
-const text = `text-[18px] text-default-orange`
+const container = `bottom-[3rem] duration-[1s] fixed flex gap-1 items-center justify-center left-1/2 py-2 -translate-x-1/2 -z-10`
+const icon = `fill-vr-orange h-[40px]`
+const text = `text-[18px] !text-vr-orange`
 
-export default function ScrollToStart(){
-   const containerRef = useRef<HTMLDivElement>(null)
-   const arrowRef = useRef<SVGSVGElement>(null)
-   const activeSection = useActiveSection()
+export default function ScrollToStart(props: Props) {
+   const iconRef = useRef<SVGSVGElement>(null)
 
-   const [containerIsVisible, setContainerIsVisible] = useState(true)
+   const [showContainer, setShowContainer] = useState(false)
 
-   useEffect(()=>{
-      if(containerIsVisible){
-         setTimeout(() => {
-            gsap.to(containerRef.current, {
-               duration: 0.5,
-               ease: Linear.easeInOut,
-               opacity: '100%'
-            })
-            
-            gsap.to(arrowRef.current, {
-               duration: 2,
-               repeat: -1,
-               translateY: -8,
-               yoyo: true,
-               yoyoEase: Linear.easeNone,
-            })
-         }, 10000)
-      }
-   }, [containerIsVisible])
+   useEffect(() => {
+      if(!iconRef.current) return
+      
+      gsap.fromTo(iconRef.current, {
+         y: -6
+      }, {
+         duration: 2,
+         repeat: -1,
+         y: 6,
+         yoyo: true,
+         yoyoEase: "power1.out"
+      })
+   }, [])
 
-   useEffect(()=>{
-      if(!activeSection || activeSection == 'initial'){
-         setContainerIsVisible(true)
-      }else{
-         setContainerIsVisible(false)
-      }
-   }, [activeSection])
-   
+   useEffect(() => {
+      if (!props.introAnimationFinished) return
+
+      setTimeout(() => {
+         setShowContainer(true)
+      }, 5000)
+   }, [props.introAnimationFinished])
+
    return (
-      <>{containerIsVisible ?
-         <div className={container} ref={containerRef}>
-            <ArrowLongDownIcon className={arrow} ref={arrowRef}/>
-            
-            <p className={text}>Scroll to start</p>
-         </div>
-      : <></>}</>
+      <div className={container} style={{ opacity: showContainer ? 1 : 0 }}>
+         <RiArrowDownLongLine className={icon} ref={iconRef} />
+         
+         <p className={text}>
+            Scroll to start
+         </p>
+      </div>
    )
 }

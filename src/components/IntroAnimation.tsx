@@ -1,42 +1,38 @@
-import { useEffect, useRef, useState } from "react"
-import IntroAnimationData from '../assets/animations/IntroAnimationData.json'
-// import Lottie from "lottie-web"
+import Lottie from "lottie-web"
+import { Dispatch, SetStateAction, useEffect, useRef } from "react"
 
-const stylesContainer = `absolute h-screen items-center justify-center left-0 overflow-hidden top-0 w-screen`
-const stylesAnimationDiv = `max-w-[400px] w-[40%]`
+type Props = {
+   setIntroAnimationFinished: Dispatch<SetStateAction<boolean>>
+}
 
-export default function IntroAnimation(){
-   const animationDiv = useRef(null)
-   const [containerDisplay, setContainerDisplay] = useState('flex')
-	let introAnimation: any
+const container = `fixed flex h-screen items-center justify-center left-0 top-0 w-screen`
+const animation = `max-w-[400px] w-1/2`
 
-	async function triggerLottie(){
-		const Lottie = await import("lottie-web")
+export default function IntroAnimation(props: Props){
+   const animationRef = useRef<HTMLDivElement>(null)
 
-		if(animationDiv.current){
-			introAnimation = (Lottie as any).loadAnimation({
-				animationData: IntroAnimationData,
-				autoplay: true,
-				container: animationDiv.current,
-				name: 'introAnimation',
-				loop: false,
-				renderer: 'svg'
-			})
+   useEffect(() => {
+      if(!animationRef.current) return
 
-			introAnimation.addEventListener('complete',()=>{
-				introAnimation.destroy()
-				setContainerDisplay('none')
-			})
-		}
-	}
+      const animationObj = Lottie.loadAnimation({
+         autoplay: true,
+         container: animationRef.current,
+         loop: false,
+         path: "/animations/IntroAnimation.json",
+         renderer: "svg"
+      })
 
-	useEffect(() => {
-		triggerLottie()
-	}, [])
+      animationObj.addEventListener("complete", () => {
+         animationObj.destroy()
+         props.setIntroAnimationFinished(true)
+      })
 
-   return(
-      <section className={stylesContainer} style={{display: containerDisplay}}>
-         <div className={stylesAnimationDiv} ref={animationDiv}/>
+      return () => animationObj.destroy()
+   }, [])
+
+   return (
+      <section className={container}>
+         <div className={animation} ref={animationRef} />
       </section>
    )
 }
